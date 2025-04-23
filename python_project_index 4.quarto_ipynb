@@ -1,0 +1,456 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"HIV Deaths and Health Burget allocation in Sub-Sahara Region Countries 2001 - 2010\"\n",
+        "author: Olga Mushakarara\n",
+        "format: html\n",
+        "---\n",
+        "\n",
+        "\n",
+        "\n",
+        "\n",
+        "# Packages \n"
+      ],
+      "id": "7a071d7f"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import pandas as pd\n",
+        "import numpy as np\n",
+        "import plotly.express as px\n",
+        "from itables import show\n",
+        "import country_converter as coco"
+      ],
+      "id": "0b2c3fba",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Data Wrangling: HIV Death data \n"
+      ],
+      "id": "42807d6f"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#Reading the hiv_death into a df: \n",
+        "\n",
+        "hiv_death = pd.read_csv(\"data/annual_hiv_deaths_number_all_ages.csv\")\n",
+        "\n",
+        "# Checking the data type of the HIV death values in the df: \n",
+        "\n",
+        "print(hiv_death.dtypes)\n",
+        "\n",
+        "\n",
+        "# Since the values are in are indicated as object (str) I will change them to int and also remove the k in the figures: \n",
+        "\n",
+        "#1. Creating a list of the years.\n",
+        "\n",
+        "years = [str(year) for year in range(1990, 2012)]\n",
+        "\n",
+        "print(years)\n",
+        "\n",
+        "# creating a loop to change k to *1000: \n",
+        "\n",
+        "for col in years: \n",
+        "    has_k = hiv_death[col].str.contains(\"k\")\n",
+        "    values = hiv_death[col].str.replace(\"k\", \"\")\n",
+        "    hiv_death[col] = np.where(has_k, values.astype(float) * 1000, values.astype(float))\n",
+        "\n",
+        "hiv_death"
+      ],
+      "id": "aaa86ced",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#making the hiv_death dataset long: \n",
+        "\n",
+        "hiv_deaths_lg = hiv_death.melt(\n",
+        "    id_vars= \"country\",\n",
+        "    var_name= \"year\", \n",
+        "    value_name=\"HIV_deaths\"\n",
+        ")\n",
+        "\n",
+        "print(hiv_deaths_lg.dtypes)\n",
+        "\n",
+        "# Changing the year variable to numeric as it's be identified as string: \n",
+        "\n",
+        "hiv_deaths_lg[\"year\"] = hiv_deaths_lg[\"year\"].astype(int)\n",
+        "\n",
+        "# Creating a dataset for only the years 2002 - 2011: \n",
+        "\n",
+        "hiv_deaths_2010 = hiv_deaths_lg.query(\"year >= 2001 and year <= 2010\")\n",
+        "\n",
+        "\n",
+        "hiv_deaths_2010"
+      ],
+      "id": "11dc6097",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Data Wrangling: HIV population data "
+      ],
+      "id": "83745a8b"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Reading the population data\n",
+        "popn = pd.read_csv(\"data/pop.csv\")\n",
+        "\n",
+        "popn\n",
+        "\n",
+        "# Reducing the popn ds to only data from 2001 - 2010:\n",
+        "cols = [\"country\"] + [str(year) for year in range(2001, 2011)]\n",
+        "\n",
+        "cols\n",
+        "\n",
+        "popn_2010 = popn[cols]\n",
+        "\n",
+        "popn_2010"
+      ],
+      "id": "c0941085",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# removing the Ms and Ks in the popn dataset. \n",
+        "\n",
+        "years = [str(year) for year in range(2001, 2011)]\n",
+        "\n",
+        "print(years)\n",
+        "\n",
+        "# creating a loop to change k to *1000: \n",
+        "\n",
+        "for col in years: \n",
+        "    has_k = popn_2010[col].str.contains(\"k\")\n",
+        "    has_M = popn_2010[col].str.contains(\"M\")\n",
+        "    has_B = popn_2010[col].str.contains(\"B\")\n",
+        "\n",
+        "\n",
+        "    values = popn_2010[col].str.replace(\"k\", \"\").str.replace(\"M\", \"\").str.replace(\"B\", \"\").astype(float)\n",
+        "\n",
+        "    popn_2010[col] = np.where(\n",
+        "        has_k, values * 1000, \n",
+        "        np.where(has_M, values* 1000000,\n",
+        "        values))\n",
+        "\n",
+        "popn_2010"
+      ],
+      "id": "f6e0549b",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#making the popn_2010 into a long format:\n",
+        "\n",
+        "popn_2010 = popn_2010.melt(\n",
+        "    id_vars = ([\"country\"]), \n",
+        "    var_name = \"year\", \n",
+        "    value_name = \"population\"\n",
+        ")\n",
+        "\n",
+        "popn_2010[\"year\"] = popn_2010[\"year\"].astype(int)\n",
+        "\n",
+        "popn_2010"
+      ],
+      "id": "ea1c5676",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Data Wrangling: expenditure data: \n"
+      ],
+      "id": "2095a47c"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Reading the expenditure data:\n",
+        "\n",
+        "health_exp = pd.read_csv(\n",
+        "    \"data/government_health_spending_of_total_gov_spending_percent.csv\"\n",
+        ")\n",
+        "\n",
+        "health_exp\n",
+        "\n",
+        "print(health_exp.dtypes)"
+      ],
+      "id": "fd64acc7",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Making the health_exp long:\n",
+        "\n",
+        "health_budget = health_exp.melt(\n",
+        "    id_vars=([\"country\"]), var_name=\"year\", value_name=\"health_budget_prop\"\n",
+        ")\n",
+        "\n",
+        "# Checking the data type of the variables in the health_budget dataset:\n",
+        "\n",
+        "print(health_budget.dtypes)\n",
+        "\n",
+        "# Changing the year variable to an integer\n",
+        "\n",
+        "health_budget[\"year\"] = health_budget[\"year\"].astype(int)\n",
+        "\n",
+        "# creating an health_budget dataset fro 2001 - 2010\n",
+        "\n",
+        "health_budget_2010 = health_budget.query(\"year >= 2001 and year <= 2010\")\n",
+        "\n",
+        "health_budget_2010.sort_values(\"health_budget_prop\")"
+      ],
+      "id": "eeb9af57",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Combining the 3 datasets: \n",
+        "    #hiv_deaths_2010\n",
+        "    #popn_2010\n",
+        "    #health_budget_2010\n",
+        "\n",
+        "hiv_popn = pd.merge(\n",
+        "    left = hiv_deaths_2010,\n",
+        "    right = popn_2010, \n",
+        "    on = ([\"country\", \"year\"]), \n",
+        "    how = \"inner\"\n",
+        ")\n",
+        "\n",
+        "hiv_popn_budget = pd.merge(\n",
+        "    left = hiv_popn, \n",
+        "    right = health_budget_2010, \n",
+        "    on = ([\"country\", \"year\"]),\n",
+        "    how = \"inner\"\n",
+        ")\n",
+        "\n",
+        "hiv_popn_budget"
+      ],
+      "id": "002b94fc",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Merging combined datasets with the sub_saharian dataset. \n"
+      ],
+      "id": "13e8d408"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# converting the country names to ISO3 codes: \n",
+        "hiv_popn_budget[\"country_code\"] = coco.convert(\n",
+        "    hiv_popn_budget[\"country\"], \n",
+        "    to = \"ISO3\"\n",
+        "    )\n",
+        "\n",
+        "hiv_popn_budget.sort_values([\"country\", \"year\"])"
+      ],
+      "id": "c186d32a",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# reading the sub_sahara country list: \n",
+        "\n",
+        "sub_sahara = pd.read_csv(\"data/sub_saharan_african_countries.csv\")\n",
+        "\n",
+        "# Adding the ISO3 code on the suhara list. \n",
+        "sub_sahara[\"country_code\"] = coco.convert(\n",
+        "    sub_sahara[\"Country\"], \n",
+        "    to = \"ISO3\"\n",
+        ")\n",
+        "\n",
+        "sub_sahara"
+      ],
+      "id": "320dc25e",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Since the analysis is only limited in the sub sahara region, I am joining the sub_sahara country list with the hiv_popn_budget using the inner join on the country_codes. \n",
+        "\n",
+        "sub_sahara_combined = pd.merge(\n",
+        "    left = sub_sahara, \n",
+        "    right = hiv_popn_budget, \n",
+        "    on = \"country_code\", \n",
+        "    how = \"inner\"\n",
+        ")\n",
+        "\n",
+        "sub_sahara_combined"
+      ],
+      "id": "8231b7be",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Checking the combined dataset: \n"
+      ],
+      "id": "7227b20b"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Confirming the number of countries in the dataset: \n",
+        "\n",
+        "sub_sahara_combined[\"country\"].unique()\n",
+        "\n",
+        "# 5 countries are missing from the combined datasets and I will check them on the hiv_death datasets to confirm if there are part of the dataset: \n",
+        "#  1. Cabo Verde - outcome: not in any of the datasets. \n",
+        "#  2. Congo Kinshasa -  outcome: not in any of the datasets. \n",
+        "#  3. Ethiopia - outcome: not in the HIV dataset. \n",
+        "#  4. Seychelles - outcome: not in the HIV dataset. \n",
+        "#  5. South Sudan - outcome: not data in the HIV dataset upto 2010 and not in the health_budget dataset. \n",
+        "\n",
+        "hiv_death.query (\"country.str.contains('DRC')\")\n",
+        "\n",
+        "popn_2010.query (\"country.str.contains('Congo')\")\n",
+        "\n",
+        "health_budget_2010.query (\"country.str.contains('Congo')\")"
+      ],
+      "id": "027c0bb0",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Data Analysis: \n",
+        "\n",
+        "## HIV Deaths: \n",
+        "\n",
+        "\n",
+        "### Total Deaths: \n",
+        "\n",
+        "\n",
+        "\n",
+        "##### **** This will be a value BOX!!! \n"
+      ],
+      "id": "466e5e94"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "sub_sahara_combined.agg(total_deaths = (\"HIV_deaths\",\"sum\"))\n"
+      ],
+      "id": "61fb8667",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "`{python} total_deaths`\n"
+      ],
+      "id": "10fff667"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "sub_sahara_combined.to_csv(\"output/HIV_Combined.csv\")\n"
+      ],
+      "id": "1d8e09da",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Calculatin the HIV death rate = (HIV deaths/Total population) * 100 000\n",
+        "\n",
+        "sub_sahara_combined[\"HIV_mortality\"] = (sub_sahara_combined[\"HIV_deaths\"]/sub_sahara_combined[\"population\"] ) * 100000\n",
+        "\n",
+        "sub_sahara_combined"
+      ],
+      "id": "33e0102d",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "# Total sum of HIV deaths:\n",
+        "\n",
+        "px.choropleth(\n",
+        "    sub_sahara_combined,\n",
+        "    locations=\"country_code\",\n",
+        "    scope=\"africa\",\n",
+        "    color=\"HIV_mortality\",\n",
+        "    color_continuous_scale=px.colors.sequential.YlOrRd,\n",
+        "    hover_name=\"country\",\n",
+        "    animation_frame=\"year\",\n",
+        "    title=\"HIV Related Mortality per 100,000 people in the Sub-Sahara Region 2001 - 2010\",\n",
+        ")\n"
+      ],
+      "id": "b92685bb",
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/Users/olgamushakarara/Documents/GitHub/2025-03-24_Final_project/.venv/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

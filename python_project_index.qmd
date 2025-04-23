@@ -1,0 +1,407 @@
+---
+title: "HIV Deaths and Health Burget allocation in Sub-Sahara Region Countries 2001 - 2010"
+author: Olga Mushakarara
+format: html
+execute: 
+  enabled: true
+---
+
+
+
+# Packages 
+
+
+```{python}
+import pandas as pd
+import numpy as np
+import plotly.express as px
+from itables import show
+import country_converter as coco
+```
+
+# Data Wrangling: HIV Death data 
+
+
+```{python}
+#Reading the hiv_death into a df: 
+
+hiv_death = pd.read_csv("data/annual_hiv_deaths_number_all_ages.csv")
+
+# Checking the data type of the HIV death values in the df: 
+
+print(hiv_death.dtypes)
+
+
+# Since the values are in are indicated as object (str) I will change them to int and also remove the k in the figures: 
+
+#1. Creating a list of the years.
+
+years = [str(year) for year in range(1990, 2012)]
+
+print(years)
+
+# creating a loop to change k to *1000: 
+
+for col in years: 
+    has_k = hiv_death[col].str.contains("k")
+    values = hiv_death[col].str.replace("k", "")
+    hiv_death[col] = np.where(has_k, values.astype(float) * 1000, values.astype(float))
+
+hiv_death
+
+```
+
+
+```{python}
+
+#making the hiv_death dataset long: 
+
+hiv_deaths_lg = hiv_death.melt(
+    id_vars= "country",
+    var_name= "year", 
+    value_name="HIV_deaths"
+)
+
+print(hiv_deaths_lg.dtypes)
+
+# Changing the year variable to numeric as it's be identified as string: 
+
+hiv_deaths_lg["year"] = hiv_deaths_lg["year"].astype(int)
+
+# Creating a dataset for only the years 2002 - 2011: 
+
+hiv_deaths_2010 = hiv_deaths_lg.query("year >= 2001 and year <= 2010")
+
+
+hiv_deaths_2010
+
+```
+
+# Data Wrangling: HIV population data 
+```{python}
+# Reading the population data
+popn = pd.read_csv("data/pop.csv")
+
+popn
+
+# Reducing the popn ds to only data from 2001 - 2010:
+cols = ["country"] + [str(year) for year in range(2001, 2011)]
+
+cols
+
+popn_2010 = popn[cols]
+
+popn_2010
+```
+
+
+```{python}
+# removing the Ms and Ks in the popn dataset. 
+
+years = [str(year) for year in range(2001, 2011)]
+
+print(years)
+
+# creating a loop to change k to *1000: 
+
+for col in years: 
+    has_k = popn_2010[col].str.contains("k")
+    has_M = popn_2010[col].str.contains("M")
+    has_B = popn_2010[col].str.contains("B")
+
+
+    values = popn_2010[col].str.replace("k", "").str.replace("M", "").str.replace("B", "").astype(float)
+
+    popn_2010[col] = np.where(
+        has_k, values * 1000, 
+        np.where(has_M, values* 1000000,
+        values))
+
+popn_2010
+
+```
+
+
+```{python}
+#making the popn_2010 into a long format:
+
+popn_2010 = popn_2010.melt(
+    id_vars = (["country"]), 
+    var_name = "year", 
+    value_name = "population"
+)
+
+popn_2010["year"] = popn_2010["year"].astype(int)
+
+popn_2010
+```
+
+# Data Wrangling: expenditure data: 
+
+
+```{python}
+# Reading the expenditure data:
+
+health_exp = pd.read_csv(
+    "data/government_health_spending_of_total_gov_spending_percent.csv"
+)
+
+health_exp
+
+print(health_exp.dtypes)
+```
+
+
+```{python}
+# Making the health_exp long:
+
+health_budget = health_exp.melt(
+    id_vars=(["country"]), var_name="year", value_name="health_budget_prop"
+)
+
+# Checking the data type of the variables in the health_budget dataset:
+
+print(health_budget.dtypes)
+
+# Changing the year variable to an integer
+
+health_budget["year"] = health_budget["year"].astype(int)
+
+# creating an health_budget dataset fro 2001 - 2010
+
+health_budget_2010 = health_budget.query("year >= 2001 and year <= 2010")
+
+health_budget_2010.sort_values("health_budget_prop")
+```
+
+
+```{python}
+# Combining the 3 datasets: 
+    #hiv_deaths_2010
+    #popn_2010
+    #health_budget_2010
+
+hiv_popn = pd.merge(
+    left = hiv_deaths_2010,
+    right = popn_2010, 
+    on = (["country", "year"]), 
+    how = "inner"
+)
+
+hiv_popn_budget = pd.merge(
+    left = hiv_popn, 
+    right = health_budget_2010, 
+    on = (["country", "year"]),
+    how = "inner"
+)
+
+hiv_popn_budget
+
+```
+
+# Merging combined datasets with the sub_saharian dataset. 
+
+```{python}
+
+# converting the country names to ISO3 codes: 
+hiv_popn_budget["country_code"] = coco.convert(
+    hiv_popn_budget["country"], 
+    to = "ISO3"
+    )
+
+hiv_popn_budget.sort_values(["country", "year"])
+```
+
+
+```{python}
+# reading the sub_sahara country list: 
+
+sub_sahara = pd.read_csv("data/sub_saharan_african_countries.csv")
+
+# Adding the ISO3 code on the suhara list. 
+sub_sahara["country_code"] = coco.convert(
+    sub_sahara["Country"], 
+    to = "ISO3"
+)
+
+sub_sahara
+```
+
+
+```{python}
+# Since the analysis is only limited in the sub sahara region, I am joining the sub_sahara country list with the hiv_popn_budget using the inner join on the country_codes. 
+
+sub_sahara_combined = pd.merge(
+    left = sub_sahara, 
+    right = hiv_popn_budget, 
+    on = "country_code", 
+    how = "inner"
+)
+
+sub_sahara_combined
+```
+
+# Checking the combined dataset: 
+
+
+```{python}
+# Confirming the number of countries in the dataset: 
+
+sub_sahara_combined["country"].unique()
+
+# 5 countries are missing from the combined datasets and I will check them on the hiv_death datasets to confirm if there are part of the dataset: 
+#  1. Cabo Verde - outcome: not in any of the datasets. 
+#  2. Congo Kinshasa -  outcome: not in any of the datasets. 
+#  3. Ethiopia - outcome: not in the HIV dataset. 
+#  4. Seychelles - outcome: not in the HIV dataset. 
+#  5. South Sudan - outcome: not data in the HIV dataset upto 2010 and not in the health_budget dataset. 
+
+hiv_death.query ("country.str.contains('DRC')")
+
+popn_2010.query ("country.str.contains('Congo')")
+
+health_budget_2010.query ("country.str.contains('Congo')")
+```
+
+# Data Analysis: 
+
+## 1. HIV Deaths: 
+
+
+### Total Deaths: 
+
+
+
+##### **** This will be a value BOX!!! 
+
+```{python}
+
+hiv_total_death_df  = sub_sahara_combined.agg(total_deaths = ("HIV_deaths","sum"))
+
+hiv_total_death_df["HIV_deaths"] = hiv_total_death_df["HIV_deaths"].apply(lambda x: f"{x:,}") 
+
+hiv_total_deaths = hiv_total_death_df["HIV_deaths"]
+
+hiv_total_deaths
+```
+
+`{python} hiv_total_deaths`
+
+```{python}
+
+sub_sahara_combined.to_csv("output/HIV_Combined.csv")
+
+
+```
+
+```{python}
+# Calculatin the HIV death rate = (HIV deaths/Total population) * 100 000
+
+sub_sahara_combined["HIV_mortality"] = (sub_sahara_combined["HIV_deaths"]/sub_sahara_combined["population"] ) * 100000
+
+sub_sahara_combined = sub_sahara_combined.sort_values(by=['year', 'HIV_mortality'], ascending=[True, False])
+
+# Filling NAs with 0
+
+sub_sahara_combined["HIV_mortality"] = sub_sahara_combined["HIV_mortality"].fillna(0)
+
+sub_sahara_combined
+```
+
+
+```{python}
+
+# Total sum of HIV deaths:
+hiv_map = px.choropleth(
+    sub_sahara_combined,
+    locations="country_code",
+    scope="africa",
+    color="HIV_mortality",
+    color_continuous_scale=px.colors.sequential.YlOrRd,
+    hover_name="country",
+    animation_frame="year",
+    title="HIV Related Mortality per 100,000 people in the Sub-Sahara Region 2001 - 2010",
+)
+
+hiv_map
+```
+
+
+```{python}
+
+# Creating a horizontal bar chart for the HIV-Mortality
+
+hiv_mortality_bar = px.bar(
+    sub_sahara_combined.query("HIV_mortality != 0"), # removing the 0 values.
+    x="HIV_mortality",
+    y="country",
+    # orientation="v",
+    animation_frame="year",
+    text_auto = "True",
+    range_x=[0, sub_sahara_combined["HIV_mortality"].max() + 100],
+)
+
+sub_sahara_combined.query("year == 2010")
+
+
+```
+
+
+## 2. Budget Proportions: 
+
+#### Text-box 
+
+```{python}
+# Highest Value 
+
+max_budget_prop = sub_sahara_combined["health_budget_prop"].max()
+
+max_budget_prop
+
+# Lowest proportion 
+
+min_budget_prop = sub_sahara_combined["health_budget_prop"].min()
+
+min_budget_prop
+
+
+# Average proportion 
+avg_budget_df = sub_sahara_combined.agg(average = ("health_budget_prop","mean")).round(2)
+
+avg_budget_prop =  avg_budget_df["health_budget_prop"].tolist()[0]
+
+avg_budget_prop
+
+```
+
+#### Box plot 
+
+```{python}
+
+hiv_death_box = px.strip(
+    sub_sahara_combined, 
+    x = "year", 
+    y = "health_budget_prop",
+    color = "country"
+)
+
+hiv_death_box
+
+```
+
+
+
+#### Treemap - Budget Proportion 
+
+
+```{python}
+# To add a year filter for this graph.
+
+px.treemap(
+    sub_sahara_combined, 
+    path = ["country"],
+    values = "health_budget_prop",
+    color = "health_budget_prop",
+    color_continuous_scale = px.colors.sequential.RdBu
+)
+```
