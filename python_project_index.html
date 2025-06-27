@@ -124,7 +124,7 @@ require(['plotly'], function(Plotly) {
 
 <section id="packages" class="level1">
 <h1>Packages</h1>
-<div id="41167507" class="cell" data-execution_count="1">
+<div id="3614f062" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
@@ -134,7 +134,7 @@ require(['plotly'], function(Plotly) {
 </section>
 <section id="data-wrangling-hiv-death-data" class="level1">
 <h1>Data Wrangling: HIV Death data</h1>
-<div id="243188af" class="cell" data-execution_count="2">
+<div id="e0b29411" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Reading the hiv_death into a df: </span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>hiv_death <span class="op">=</span> pd.read_csv(<span class="st">"data/annual_hiv_deaths_number_all_ages.csv"</span>)</span>
@@ -187,7 +187,7 @@ require(['plotly'], function(Plotly) {
 dtype: object
 ['1990', '1991', '1992', '1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011']</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="23">
 <div>
 
 
@@ -490,7 +490,7 @@ dtype: object
 </div>
 </div>
 </div>
-<div id="d6106dba" class="cell" data-execution_count="3">
+<div id="a98f592a" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#making the hiv_death dataset long: </span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>hiv_deaths_lg <span class="op">=</span> hiv_death.melt(</span>
@@ -517,7 +517,7 @@ year           object
 HIV_deaths    float64
 dtype: object</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="24">
 <div>
 
 
@@ -607,7 +607,7 @@ dtype: object</code></pre>
 </section>
 <section id="data-wrangling-hiv-population-data" class="level1">
 <h1>Data Wrangling: HIV population data</h1>
-<div id="90452909" class="cell" data-execution_count="4">
+<div id="d3c48708" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Reading the population data</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>popn <span class="op">=</span> pd.read_csv(<span class="st">"data/pop.csv"</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -621,7 +621,7 @@ dtype: object</code></pre>
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>popn_2010 <span class="op">=</span> popn[cols]</span>
 <span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>popn_2010</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="25">
 <div>
 
 
@@ -804,7 +804,7 @@ dtype: object</code></pre>
 </div>
 </div>
 </div>
-<div id="cff0c6e7" class="cell" data-execution_count="5">
+<div id="3eaae459" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># removing the Ms and Ks in the popn dataset. </span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>years <span class="op">=</span> [<span class="bu">str</span>(year) <span class="cf">for</span> year <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2001</span>, <span class="dv">2011</span>)]</span>
@@ -831,7 +831,7 @@ dtype: object</code></pre>
 <pre><code>['2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010']</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/j7/9ymtjjqn7d36mh828n6m3j8h0000gn/T/ipykernel_35772/407698550.py:17: SettingWithCopyWarning:
+<pre><code>/var/folders/cb/_1gvnpkx05v__kn69krxwzy00000gp/T/ipykernel_85109/407698550.py:17: SettingWithCopyWarning:
 
 
 A value is trying to be set on a copy of a slice from a DataFrame.
@@ -839,7 +839,7 @@ Try using .loc[row_indexer,col_indexer] = value instead
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
 
-/var/folders/j7/9ymtjjqn7d36mh828n6m3j8h0000gn/T/ipykernel_35772/407698550.py:17: SettingWithCopyWarning:
+/var/folders/cb/_1gvnpkx05v__kn69krxwzy00000gp/T/ipykernel_85109/407698550.py:17: SettingWithCopyWarning:
 
 
 A value is trying to be set on a copy of a slice from a DataFrame.
@@ -847,7 +847,7 @@ Try using .loc[row_indexer,col_indexer] = value instead
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
 
-/var/folders/j7/9ymtjjqn7d36mh828n6m3j8h0000gn/T/ipykernel_35772/407698550.py:17: SettingWithCopyWarning:
+/var/folders/cb/_1gvnpkx05v__kn69krxwzy00000gp/T/ipykernel_85109/407698550.py:17: SettingWithCopyWarning:
 
 
 A value is trying to be set on a copy of a slice from a DataFrame.
@@ -855,7 +855,7 @@ Try using .loc[row_indexer,col_indexer] = value instead
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
 
-/var/folders/j7/9ymtjjqn7d36mh828n6m3j8h0000gn/T/ipykernel_35772/407698550.py:17: SettingWithCopyWarning:
+/var/folders/cb/_1gvnpkx05v__kn69krxwzy00000gp/T/ipykernel_85109/407698550.py:17: SettingWithCopyWarning:
 
 
 A value is trying to be set on a copy of a slice from a DataFrame.
@@ -863,7 +863,7 @@ Try using .loc[row_indexer,col_indexer] = value instead
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
 
-/var/folders/j7/9ymtjjqn7d36mh828n6m3j8h0000gn/T/ipykernel_35772/407698550.py:17: SettingWithCopyWarning:
+/var/folders/cb/_1gvnpkx05v__kn69krxwzy00000gp/T/ipykernel_85109/407698550.py:17: SettingWithCopyWarning:
 
 
 A value is trying to be set on a copy of a slice from a DataFrame.
@@ -871,7 +871,7 @@ Try using .loc[row_indexer,col_indexer] = value instead
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
 
-/var/folders/j7/9ymtjjqn7d36mh828n6m3j8h0000gn/T/ipykernel_35772/407698550.py:17: SettingWithCopyWarning:
+/var/folders/cb/_1gvnpkx05v__kn69krxwzy00000gp/T/ipykernel_85109/407698550.py:17: SettingWithCopyWarning:
 
 
 A value is trying to be set on a copy of a slice from a DataFrame.
@@ -879,7 +879,7 @@ Try using .loc[row_indexer,col_indexer] = value instead
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
 
-/var/folders/j7/9ymtjjqn7d36mh828n6m3j8h0000gn/T/ipykernel_35772/407698550.py:17: SettingWithCopyWarning:
+/var/folders/cb/_1gvnpkx05v__kn69krxwzy00000gp/T/ipykernel_85109/407698550.py:17: SettingWithCopyWarning:
 
 
 A value is trying to be set on a copy of a slice from a DataFrame.
@@ -887,7 +887,7 @@ Try using .loc[row_indexer,col_indexer] = value instead
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
 
-/var/folders/j7/9ymtjjqn7d36mh828n6m3j8h0000gn/T/ipykernel_35772/407698550.py:17: SettingWithCopyWarning:
+/var/folders/cb/_1gvnpkx05v__kn69krxwzy00000gp/T/ipykernel_85109/407698550.py:17: SettingWithCopyWarning:
 
 
 A value is trying to be set on a copy of a slice from a DataFrame.
@@ -895,7 +895,7 @@ Try using .loc[row_indexer,col_indexer] = value instead
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
 
-/var/folders/j7/9ymtjjqn7d36mh828n6m3j8h0000gn/T/ipykernel_35772/407698550.py:17: SettingWithCopyWarning:
+/var/folders/cb/_1gvnpkx05v__kn69krxwzy00000gp/T/ipykernel_85109/407698550.py:17: SettingWithCopyWarning:
 
 
 A value is trying to be set on a copy of a slice from a DataFrame.
@@ -903,7 +903,7 @@ Try using .loc[row_indexer,col_indexer] = value instead
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
 
-/var/folders/j7/9ymtjjqn7d36mh828n6m3j8h0000gn/T/ipykernel_35772/407698550.py:17: SettingWithCopyWarning:
+/var/folders/cb/_1gvnpkx05v__kn69krxwzy00000gp/T/ipykernel_85109/407698550.py:17: SettingWithCopyWarning:
 
 
 A value is trying to be set on a copy of a slice from a DataFrame.
@@ -912,7 +912,7 @@ Try using .loc[row_indexer,col_indexer] = value instead
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
 </code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="26">
 <div>
 
 
@@ -1095,7 +1095,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 </div>
-<div id="6d895349" class="cell" data-execution_count="6">
+<div id="6469236e" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#making the popn_2010 into a long format:</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>popn_2010 <span class="op">=</span> popn_2010.melt(</span>
@@ -1107,7 +1107,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 <span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>popn_2010[<span class="st">"year"</span>] <span class="op">=</span> popn_2010[<span class="st">"year"</span>].astype(<span class="bu">int</span>)</span>
 <span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>popn_2010</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="27">
 <div>
 
 
@@ -1197,7 +1197,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </section>
 <section id="data-wrangling-expenditure-data" class="level1">
 <h1>Data Wrangling: expenditure data:</h1>
-<div id="9193633c" class="cell" data-execution_count="7">
+<div id="88a079e6" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Reading the expenditure data:</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>health_exp <span class="op">=</span> pd.read_csv(</span>
@@ -1228,7 +1228,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 dtype: object</code></pre>
 </div>
 </div>
-<div id="50ddfaac" class="cell" data-execution_count="8">
+<div id="dc9e80b9" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Making the health_exp long:</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>health_budget <span class="op">=</span> health_exp.melt(</span>
@@ -1254,7 +1254,7 @@ year                   object
 health_budget_prop    float64
 dtype: object</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="29">
 <div>
 
 
@@ -1341,7 +1341,7 @@ dtype: object</code></pre>
 </div>
 </div>
 </div>
-<div id="3f433e6c" class="cell" data-execution_count="9">
+<div id="d90e6f86" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Combining the 3 datasets: </span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">#hiv_deaths_2010</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">#popn_2010</span></span>
@@ -1362,7 +1362,7 @@ dtype: object</code></pre>
 <span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>hiv_popn_budget</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="30">
 <div>
 
 
@@ -1476,7 +1476,7 @@ dtype: object</code></pre>
 </section>
 <section id="merging-combined-datasets-with-the-sub_saharian-dataset." class="level1">
 <h1>Merging combined datasets with the sub_saharian dataset.</h1>
-<div id="a0887c97" class="cell" data-execution_count="10">
+<div id="532e9f5c" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># converting the country names to ISO3 codes: </span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>hiv_popn_budget[<span class="st">"country_code"</span>] <span class="op">=</span> coco.convert(</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    hiv_popn_budget[<span class="st">"country"</span>], </span>
@@ -1484,7 +1484,7 @@ dtype: object</code></pre>
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>hiv_popn_budget.sort_values([<span class="st">"country"</span>, <span class="st">"year"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
+<div class="cell-output cell-output-display" data-execution_count="31">
 <div>
 
 
@@ -1607,7 +1607,7 @@ dtype: object</code></pre>
 </div>
 </div>
 </div>
-<div id="2b376f35" class="cell" data-execution_count="11">
+<div id="15b71682" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># reading the sub_sahara country list: </span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>sub_sahara <span class="op">=</span> pd.read_csv(<span class="st">"data/sub_saharan_african_countries.csv"</span>)</span>
@@ -1619,7 +1619,7 @@ dtype: object</code></pre>
 <span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>sub_sahara</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div class="cell-output cell-output-display" data-execution_count="32">
 <div>
 
 
@@ -1883,7 +1883,7 @@ dtype: object</code></pre>
 </div>
 </div>
 </div>
-<div id="b1071b43" class="cell" data-execution_count="12">
+<div id="a278c7c3" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Since the analysis is only limited in the sub sahara region, I am joining the sub_sahara country list with the hiv_popn_budget using the inner join on the country_codes. </span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>sub_sahara_combined <span class="op">=</span> pd.merge(</span>
@@ -1894,7 +1894,7 @@ dtype: object</code></pre>
 <span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>sub_sahara_combined</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="12">
+<div class="cell-output cell-output-display" data-execution_count="33">
 <div>
 
 
@@ -2032,7 +2032,7 @@ dtype: object</code></pre>
 </section>
 <section id="checking-the-combined-dataset" class="level1">
 <h1>Checking the combined dataset:</h1>
-<div id="0ddd0a28" class="cell" data-execution_count="13">
+<div id="9249c2c9" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Confirming the number of countries in the dataset: </span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>sub_sahara_combined[<span class="st">"country"</span>].unique()</span>
@@ -2049,7 +2049,7 @@ dtype: object</code></pre>
 <span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>popn_2010.query (<span class="st">"country.str.contains('Congo')"</span>)</span>
 <span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>health_budget_2010.query (<span class="st">"country.str.contains('Congo')"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="13">
+<div class="cell-output cell-output-display" data-execution_count="34">
 <div>
 
 
@@ -2193,73 +2193,41 @@ dtype: object</code></pre>
 <section id="data-analysis" class="level1">
 <h1>Data Analysis:</h1>
 <section id="hiv-deaths" class="level2">
-<h2 class="anchored" data-anchor-id="hiv-deaths">HIV Deaths:</h2>
+<h2 class="anchored" data-anchor-id="hiv-deaths">1. HIV Deaths:</h2>
 <section id="total-deaths" class="level3">
 <h3 class="anchored" data-anchor-id="total-deaths">Total Deaths:</h3>
 <section id="this-will-be-a-value-box" class="level5">
 <h5 class="anchored" data-anchor-id="this-will-be-a-value-box">**** This will be a value BOX!!!</h5>
-<div id="3d84255d" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>hiv_total_deaths <span class="op">=</span> sub_sahara_combined.agg(total_deaths <span class="op">=</span> (<span class="st">"HIV_deaths"</span>,<span class="st">"sum"</span>))</span>
+<div id="ad8d3437" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>hiv_total_death_df  <span class="op">=</span> sub_sahara_combined.agg(total_deaths <span class="op">=</span> (<span class="st">"HIV_deaths"</span>,<span class="st">"sum"</span>))</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>hiv_total_deaths</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="14">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">HIV_deaths</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">total_deaths</td>
-<td>14059340.0</td>
-</tr>
-</tbody>
-</table>
-
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>hiv_total_death_df[<span class="st">"HIV_deaths"</span>] <span class="op">=</span> hiv_total_death_df[<span class="st">"HIV_deaths"</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: <span class="ss">f"</span><span class="sc">{</span>x<span class="sc">:,}</span><span class="ss">"</span>) </span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>hiv_total_deaths <span class="op">=</span> hiv_total_death_df[<span class="st">"HIV_deaths"</span>]</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>hiv_total_deaths</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="35">
+<pre><code>total_deaths    14,059,340.0
+Name: HIV_deaths, dtype: object</code></pre>
 </div>
 </div>
+<p>total_deaths 14,059,340.0 Name: HIV_deaths, dtype: object</p>
+<div id="96b37c38" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>sub_sahara_combined.to_csv(<span class="st">"output/HIV_Combined.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-`
-<div>
-
-<table class="dataframe table table-sm table-striped small">
-<thead>
-<tr>
-<th>
-</th>
-<th>
-HIV_deaths
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>
-total_deaths
-</th>
-<td>
-14059340.0
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>`{=html}</p>
-<div id="e9821162" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>sub_sahara_combined.to_csv(<span class="st">"output/HIV_Combined.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="e9c7b3b5" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculatin the HIV death rate = (HIV deaths/Total population) * 100 000</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>sub_sahara_combined[<span class="st">"HIV_mortality"</span>] <span class="op">=</span> (sub_sahara_combined[<span class="st">"HIV_deaths"</span>]<span class="op">/</span>sub_sahara_combined[<span class="st">"population"</span>] ) <span class="op">*</span> <span class="dv">100000</span></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>sub_sahara_combined</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="16">
+<div id="a2289087" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculatin the HIV death rate = (HIV deaths/Total population) * 100 000</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>sub_sahara_combined[<span class="st">"HIV_mortality"</span>] <span class="op">=</span> (sub_sahara_combined[<span class="st">"HIV_deaths"</span>]<span class="op">/</span>sub_sahara_combined[<span class="st">"population"</span>] ) <span class="op">*</span> <span class="dv">100000</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>sub_sahara_combined <span class="op">=</span> sub_sahara_combined.sort_values(by<span class="op">=</span>[<span class="st">'year'</span>, <span class="st">'HIV_mortality'</span>], ascending<span class="op">=</span>[<span class="va">True</span>, <span class="va">False</span>])</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Filling NAs with 0</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>sub_sahara_combined[<span class="st">"HIV_mortality"</span>] <span class="op">=</span> sub_sahara_combined[<span class="st">"HIV_mortality"</span>].fillna(<span class="dv">0</span>)</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>sub_sahara_combined</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="37">
 <div>
 
 
@@ -2279,59 +2247,59 @@ total_deaths
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>Angola</td>
-<td>AGO</td>
-<td>Angola</td>
+<td data-quarto-table-cell-role="th">430</td>
+<td>Zimbabwe</td>
+<td>ZWE</td>
+<td>Zimbabwe</td>
 <td>2001</td>
-<td>10000.0</td>
-<td>16700000.0</td>
-<td>6.06</td>
-<td>59.880240</td>
+<td>150000.0</td>
+<td>12000000.0</td>
+<td>9.26</td>
+<td>1250.000000</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>Angola</td>
-<td>AGO</td>
-<td>Angola</td>
-<td>2002</td>
-<td>11000.0</td>
-<td>17300000.0</td>
-<td>3.74</td>
-<td>63.583815</td>
+<td data-quarto-table-cell-role="th">20</td>
+<td>Botswana</td>
+<td>BWA</td>
+<td>Botswana</td>
+<td>2001</td>
+<td>15000.0</td>
+<td>1710000.0</td>
+<td>9.74</td>
+<td>877.192982</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>Angola</td>
-<td>AGO</td>
-<td>Angola</td>
-<td>2003</td>
-<td>12000.0</td>
-<td>17900000.0</td>
-<td>4.83</td>
-<td>67.039106</td>
+<td data-quarto-table-cell-role="th">210</td>
+<td>Lesotho</td>
+<td>LSO</td>
+<td>Lesotho</td>
+<td>2001</td>
+<td>14000.0</td>
+<td>2000000.0</td>
+<td>9.05</td>
+<td>700.000000</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>Angola</td>
-<td>AGO</td>
-<td>Angola</td>
-<td>2004</td>
-<td>12000.0</td>
-<td>18600000.0</td>
-<td>4.12</td>
-<td>64.516129</td>
+<td data-quarto-table-cell-role="th">420</td>
+<td>Zambia</td>
+<td>ZMB</td>
+<td>Zambia</td>
+<td>2001</td>
+<td>68000.0</td>
+<td>10300000.0</td>
+<td>10.50</td>
+<td>660.194175</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>Angola</td>
-<td>AGO</td>
-<td>Angola</td>
-<td>2005</td>
-<td>13000.0</td>
-<td>19300000.0</td>
-<td>4.38</td>
-<td>67.357513</td>
+<td data-quarto-table-cell-role="th">140</td>
+<td>Eswatini</td>
+<td>SWZ</td>
+<td>Eswatini</td>
+<td>2001</td>
+<td>6700.0</td>
+<td>1050000.0</td>
+<td>10.20</td>
+<td>638.095238</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">...</td>
@@ -2345,50 +2313,156 @@ total_deaths
 <td>...</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">435</td>
-<td>Zimbabwe</td>
-<td>ZWE</td>
-<td>Zimbabwe</td>
-<td>2006</td>
-<td>140000.0</td>
-<td>12600000.0</td>
+<td data-quarto-table-cell-role="th">239</td>
+<td>Madagascar</td>
+<td>MDG</td>
+<td>Madagascar</td>
+<td>2010</td>
 <td>NaN</td>
-<td>1111.111111</td>
+<td>22200000.0</td>
+<td>14.70</td>
+<td>0.000000</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">436</td>
-<td>Zimbabwe</td>
-<td>ZWE</td>
-<td>Zimbabwe</td>
-<td>2007</td>
-<td>130000.0</td>
-<td>12800000.0</td>
+<td data-quarto-table-cell-role="th">259</td>
+<td>Mali</td>
+<td>MLI</td>
+<td>Mali</td>
+<td>2010</td>
 <td>NaN</td>
-<td>1015.625000</td>
+<td>15900000.0</td>
+<td>10.60</td>
+<td>0.000000</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">437</td>
-<td>Zimbabwe</td>
-<td>ZWE</td>
-<td>Zimbabwe</td>
-<td>2008</td>
-<td>110000.0</td>
-<td>13000000.0</td>
+<td data-quarto-table-cell-role="th">289</td>
+<td>Mozambique</td>
+<td>MOZ</td>
+<td>Mozambique</td>
+<td>2010</td>
 <td>NaN</td>
-<td>846.153846</td>
+<td>23000000.0</td>
+<td>12.20</td>
+<td>0.000000</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">438</td>
-<td>Zimbabwe</td>
-<td>ZWE</td>
-<td>Zimbabwe</td>
-<td>2009</td>
-<td>98000.0</td>
-<td>13100000.0</td>
+<td data-quarto-table-cell-role="th">409</td>
+<td>Togo</td>
+<td>TGO</td>
+<td>Togo</td>
+<td>2010</td>
 <td>NaN</td>
-<td>748.091603</td>
+<td>6730000.0</td>
+<td>15.40</td>
+<td>0.000000</td>
 </tr>
 <tr class="odd">
+<td data-quarto-table-cell-role="th">429</td>
+<td>Zambia</td>
+<td>ZMB</td>
+<td>Zambia</td>
+<td>2010</td>
+<td>NaN</td>
+<td>14000000.0</td>
+<td>15.60</td>
+<td>0.000000</td>
+</tr>
+</tbody>
+</table>
+
+<p>440 rows × 8 columns</p>
+</div>
+</div>
+</div>
+<div id="9d84d824" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Total sum of HIV deaths:</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>hiv_map <span class="op">=</span> px.choropleth(</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    sub_sahara_combined,</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    locations<span class="op">=</span><span class="st">"country_code"</span>,</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    scope<span class="op">=</span><span class="st">"africa"</span>,</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">"HIV_mortality"</span>,</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>    color_continuous_scale<span class="op">=</span>px.colors.sequential.YlOrRd,</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>    hover_name<span class="op">=</span><span class="st">"country"</span>,</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>    animation_frame<span class="op">=</span><span class="st">"year"</span>,</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"HIV Related Mortality per 100,000 people in the Sub-Sahara Region 2001 - 2010"</span>,</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>hiv_map</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>                            <div id="46b14420-9a5c-4116-9f56-725290a8210a" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("46b14420-9a5c-4116-9f56-725290a8210a")) {                    Plotly.newPlot(                        "46b14420-9a5c-4116-9f56-725290a8210a",                        [{"coloraxis":"coloraxis","geo":"geo","hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003eyear=2001\u003cbr\u003ecountry_code=%{location}\u003cbr\u003eHIV_mortality=%{z}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Zimbabwe","Botswana","Lesotho","Zambia","Eswatini","Malawi","Namibia","South Africa","Uganda","Central African Republic","Kenya","Tanzania","Cote d'Ivoire","Rwanda","Mozambique","Burundi","Cameroon","Congo, Rep.","Gabon","Liberia","Burkina Faso","Togo","Nigeria","Chad","Ghana","Eritrea","Djibouti","Guinea","Mali","Angola","Guinea-Bissau","Benin","Sao Tome and Principe","Equatorial Guinea","Somalia","Mauritius","Niger","Mauritania","Sudan","Gambia","Senegal","Sierra Leone","Comoros","Madagascar"],"locations":["ZWE","BWA","LSO","ZMB","SWZ","MWI","NAM","ZAF","UGA","CAF","KEN","TZA","CIV","RWA","MOZ","BDI","CMR","COG","GAB","LBR","BFA","TGO","NGA","TCD","GHA","ERI","DJI","GIN","MLI","AGO","GNB","BEN","STP","GNQ","SOM","MUS","NER","MRT","SDN","GMB","SEN","SLE","COM","MDG"],"name":"","z":[1250.0,877.1929824561403,700.0,660.1941747572815,638.0952380952381,543.1034482758621,462.3655913978494,441.1764705882353,404.8582995951417,382.65306122448976,379.746835443038,369.3181818181818,280.2197802197802,253.31724969843188,232.43243243243242,211.16138763197586,202.61437908496734,177.37003058103977,152.67175572519085,129.13907284768214,121.95121951219512,121.21212121212122,115.3846153846154,101.13636363636364,79.20792079207921,77.92207792207792,77.82101167315176,73.77049180327869,60.50420168067227,59.880239520958085,47.61904761904762,41.61073825503356,41.09589041095891,40.0,30.43478260869565,28.45528455284553,26.89075630252101,22.388059701492537,21.05263157894737,20.0,13.72549019607843,12.79317697228145,10.96892138939671,7.647058823529411],"type":"choropleth"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"geo":{"domain":{"x":[0.0,1.0],"y":[0.0,1.0]},"center":{},"scope":"africa"},"coloraxis":{"colorbar":{"title":{"text":"HIV_mortality"}},"colorscale":[[0.0,"rgb(255,255,204)"],[0.125,"rgb(255,237,160)"],[0.25,"rgb(254,217,118)"],[0.375,"rgb(254,178,76)"],[0.5,"rgb(253,141,60)"],[0.625,"rgb(252,78,42)"],[0.75,"rgb(227,26,28)"],[0.875,"rgb(189,0,38)"],[1.0,"rgb(128,0,38)"]]},"legend":{"tracegroupgap":0},"title":{"text":"HIV Related Mortality per 100,000 people in the Sub-Sahara Region 2001 - 2010"},"updatemenus":[{"buttons":[{"args":[null,{"frame":{"duration":500,"redraw":true},"mode":"immediate","fromcurrent":true,"transition":{"duration":500,"easing":"linear"}}],"label":"&#9654;","method":"animate"},{"args":[[null],{"frame":{"duration":0,"redraw":true},"mode":"immediate","fromcurrent":true,"transition":{"duration":0,"easing":"linear"}}],"label":"&#9724;","method":"animate"}],"direction":"left","pad":{"r":10,"t":70},"showactive":false,"type":"buttons","x":0.1,"xanchor":"right","y":0,"yanchor":"top"}],"sliders":[{"active":0,"currentvalue":{"prefix":"year="},"len":0.9,"pad":{"b":10,"t":60},"steps":[{"args":[["2001"],{"frame":{"duration":0,"redraw":true},"mode":"immediate","fromcurrent":true,"transition":{"duration":0,"easing":"linear"}}],"label":"2001","method":"animate"},{"args":[["2002"],{"frame":{"duration":0,"redraw":true},"mode":"immediate","fromcurrent":true,"transition":{"duration":0,"easing":"linear"}}],"label":"2002","method":"animate"},{"args":[["2003"],{"frame":{"duration":0,"redraw":true},"mode":"immediate","fromcurrent":true,"transition":{"duration":0,"easing":"linear"}}],"label":"2003","method":"animate"},{"args":[["2004"],{"frame":{"duration":0,"redraw":true},"mode":"immediate","fromcurrent":true,"transition":{"duration":0,"easing":"linear"}}],"label":"2004","method":"animate"},{"args":[["2005"],{"frame":{"duration":0,"redraw":true},"mode":"immediate","fromcurrent":true,"transition":{"duration":0,"easing":"linear"}}],"label":"2005","method":"animate"},{"args":[["2006"],{"frame":{"duration":0,"redraw":true},"mode":"immediate","fromcurrent":true,"transition":{"duration":0,"easing":"linear"}}],"label":"2006","method":"animate"},{"args":[["2007"],{"frame":{"duration":0,"redraw":true},"mode":"immediate","fromcurrent":true,"transition":{"duration":0,"easing":"linear"}}],"label":"2007","method":"animate"},{"args":[["2008"],{"frame":{"duration":0,"redraw":true},"mode":"immediate","fromcurrent":true,"transition":{"duration":0,"easing":"linear"}}],"label":"2008","method":"animate"},{"args":[["2009"],{"frame":{"duration":0,"redraw":true},"mode":"immediate","fromcurrent":true,"transition":{"duration":0,"easing":"linear"}}],"label":"2009","method":"animate"},{"args":[["2010"],{"frame":{"duration":0,"redraw":true},"mode":"immediate","fromcurrent":true,"transition":{"duration":0,"easing":"linear"}}],"label":"2010","method":"animate"}],"x":0.1,"xanchor":"left","y":0,"yanchor":"top"}]},                        {"responsive": true}                    ).then(function(){
+                            Plotly.addFrames('46b14420-9a5c-4116-9f56-725290a8210a', [{"data":[{"coloraxis":"coloraxis","geo":"geo","hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003eyear=2001\u003cbr\u003ecountry_code=%{location}\u003cbr\u003eHIV_mortality=%{z}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Zimbabwe","Botswana","Lesotho","Zambia","Eswatini","Malawi","Namibia","South Africa","Uganda","Central African Republic","Kenya","Tanzania","Cote d'Ivoire","Rwanda","Mozambique","Burundi","Cameroon","Congo, Rep.","Gabon","Liberia","Burkina Faso","Togo","Nigeria","Chad","Ghana","Eritrea","Djibouti","Guinea","Mali","Angola","Guinea-Bissau","Benin","Sao Tome and Principe","Equatorial Guinea","Somalia","Mauritius","Niger","Mauritania","Sudan","Gambia","Senegal","Sierra Leone","Comoros","Madagascar"],"locations":["ZWE","BWA","LSO","ZMB","SWZ","MWI","NAM","ZAF","UGA","CAF","KEN","TZA","CIV","RWA","MOZ","BDI","CMR","COG","GAB","LBR","BFA","TGO","NGA","TCD","GHA","ERI","DJI","GIN","MLI","AGO","GNB","BEN","STP","GNQ","SOM","MUS","NER","MRT","SDN","GMB","SEN","SLE","COM","MDG"],"name":"","z":[1250.0,877.1929824561403,700.0,660.1941747572815,638.0952380952381,543.1034482758621,462.3655913978494,441.1764705882353,404.8582995951417,382.65306122448976,379.746835443038,369.3181818181818,280.2197802197802,253.31724969843188,232.43243243243242,211.16138763197586,202.61437908496734,177.37003058103977,152.67175572519085,129.13907284768214,121.95121951219512,121.21212121212122,115.3846153846154,101.13636363636364,79.20792079207921,77.92207792207792,77.82101167315176,73.77049180327869,60.50420168067227,59.880239520958085,47.61904761904762,41.61073825503356,41.09589041095891,40.0,30.43478260869565,28.45528455284553,26.89075630252101,22.388059701492537,21.05263157894737,20.0,13.72549019607843,12.79317697228145,10.96892138939671,7.647058823529411],"type":"choropleth"}],"name":"2001"},{"data":[{"coloraxis":"coloraxis","geo":"geo","hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003eyear=2002\u003cbr\u003ecountry_code=%{location}\u003cbr\u003eHIV_mortality=%{z}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Zimbabwe","Botswana","Lesotho","Eswatini","Zambia","Malawi","South Africa","Namibia","Kenya","Uganda","Central African Republic","Tanzania","Cote d'Ivoire","Mozambique","Rwanda","Burundi","Cameroon","Congo, Rep.","Gabon","Liberia","Togo","Nigeria","Burkina Faso","Chad","Ghana","Eritrea","Djibouti","Guinea","Angola","Mali","Guinea-Bissau","Benin","Sao Tome and Principe","Equatorial Guinea","Somalia","Mauritius","Niger","Sierra Leone","Mauritania","Sudan","Gambia","Senegal","Comoros","Madagascar"],"locations":["ZWE","BWA","LSO","SWZ","ZMB","MWI","ZAF","NAM","KEN","UGA","CAF","TZA","CIV","MOZ","RWA","BDI","CMR","COG","GAB","LBR","TGO","NGA","BFA","TCD","GHA","ERI","DJI","GIN","AGO","MLI","GNB","BEN","STP","GNQ","SOM","MUS","NER","SLE","MRT","SDN","GMB","SEN","COM","MDG"],"name":"","z":[1322.3140495867767,919.5402298850574,804.0201005025126,726.4150943396227,650.9433962264151,563.0252100840336,541.6666666666666,529.1005291005291,398.77300613496936,380.39215686274514,374.0648379052369,360.1108033240997,278.0748663101604,263.1578947368421,250.0,219.94134897360706,210.19108280254778,173.13432835820896,170.37037037037038,132.6860841423948,131.2384473197782,127.81954887218045,110.23622047244095,109.64912280701753,86.95652173913044,83.68200836820083,75.37688442211055,74.97116493656286,63.58381502890173,60.162601626016254,46.51162790697675,42.96875,40.0,37.59398496240602,30.366492146596855,28.45528455284553,27.64227642276423,22.132796780684103,21.8978102189781,21.575342465753423,19.48051948051948,14.285714285714286,10.73345259391771,8.0],"type":"choropleth"}],"name":"2002"},{"data":[{"coloraxis":"coloraxis","geo":"geo","hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003eyear=2003\u003cbr\u003ecountry_code=%{location}\u003cbr\u003eHIV_mortality=%{z}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Zimbabwe","Botswana","Lesotho","Eswatini","Zambia","South Africa","Malawi","Namibia","Central African Republic","Kenya","Uganda","Tanzania","Mozambique","Cote d'Ivoire","Rwanda","Cameroon","Burundi","Gabon","Congo, Rep.","Nigeria","Togo","Liberia","Chad","Burkina Faso","Ghana","Eritrea","Guinea","Djibouti","Angola","Mali","Guinea-Bissau","Benin","Sao Tome and Principe","Equatorial Guinea","Somalia","Niger","Mauritius","Sierra Leone","Mauritania","Sudan","Gambia","Senegal","Comoros","Madagascar"],"locations":["ZWE","BWA","LSO","SWZ","ZMB","ZAF","MWI","NAM","CAF","KEN","UGA","TZA","MOZ","CIV","RWA","CMR","BDI","GAB","COG","NGA","TGO","LBR","TCD","BFA","GHA","ERI","GIN","DJI","AGO","MLI","GNB","BEN","STP","GNQ","SOM","NER","MUS","SLE","MRT","SDN","GMB","SEN","COM","MDG"],"name":"","z":[1311.4754098360656,955.056179775281,904.5226130653266,794.392523364486,645.4545454545454,618.5567010309278,581.9672131147541,572.9166666666666,390.24390243902445,385.7566765578635,352.2727272727273,350.4043126684636,298.96907216494844,277.4869109947644,244.47031431897554,216.04938271604937,213.0681818181818,181.15942028985506,171.0144927536232,138.6861313868613,136.93693693693695,134.6153846153846,115.91148577449948,106.8702290076336,89.2018779342723,84.33734939759036,74.40811724915446,73.71007371007371,67.0391061452514,58.26771653543307,45.45454545454545,44.24778761061947,38.96103896103896,35.37735849056604,30.272452068617557,28.90625,28.225806451612907,27.027027027027028,21.428571428571427,21.40468227424749,18.987341772151897,14.953271028037385,10.526315789473685,7.734806629834254],"type":"choropleth"}],"name":"2003"},{"data":[{"coloraxis":"coloraxis","geo":"geo","hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003eyear=2004\u003cbr\u003ecountry_code=%{location}\u003cbr\u003eHIV_mortality=%{z}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Zimbabwe","Lesotho","Eswatini","Botswana","South Africa","Zambia","Namibia","Malawi","Central African Republic","Kenya","Tanzania","Mozambique","Uganda","Cote d'Ivoire","Rwanda","Cameroon","Burundi","Gabon","Congo, Rep.","Nigeria","Togo","Liberia","Chad","Burkina Faso","Ghana","Eritrea","Guinea-Bissau","Guinea","Djibouti","Angola","Mali","Benin","Sao Tome and Principe","Equatorial Guinea","Sierra Leone","Somalia","Niger","Mauritius","Sudan","Mauritania","Gambia","Senegal","Comoros","Madagascar"],"locations":["ZWE","LSO","SWZ","BWA","ZAF","ZMB","NAM","MWI","CAF","KEN","TZA","MOZ","UGA","CIV","RWA","CMR","BDI","GAB","COG","NGA","TGO","LBR","TCD","BFA","GHA","ERI","GNB","GIN","DJI","AGO","MLI","BEN","STP","GNQ","SLE","SOM","NER","MUS","SDN","MRT","GMB","SEN","COM","MDG"],"name":"","z":[1209.6774193548388,964.4670050761422,869.1588785046729,828.7292817679557,693.8775510204082,619.4690265486726,618.5567010309278,592.0,381.86157517899755,374.63976945244957,341.20734908136484,328.2828282828283,327.20588235294116,270.4081632653061,238.09523809523813,216.86746987951804,205.1983584131327,176.05633802816902,165.266106442577,148.93617021276597,140.35087719298244,136.0759493670886,120.96774193548387,96.2962962962963,91.32420091324201,84.61538461538461,81.48148148148148,73.9514348785872,72.63922518159806,64.51612903225806,54.19847328244275,44.11764705882353,37.974683544303794,33.333333333333336,31.71641791044776,30.097087378640776,30.075187969924812,27.999999999999996,20.915032679738562,20.905923344947734,18.51851851851852,15.454545454545455,10.327022375215147,8.064516129032258],"type":"choropleth"}],"name":"2004"},{"data":[{"coloraxis":"coloraxis","geo":"geo","hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003eyear=2005\u003cbr\u003ecountry_code=%{location}\u003cbr\u003eHIV_mortality=%{z}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Zimbabwe","Lesotho","Eswatini","South Africa","Namibia","Botswana","Malawi","Zambia","Mozambique","Central African Republic","Kenya","Tanzania","Uganda","Cote d'Ivoire","Cameroon","Rwanda","Burundi","Gabon","Congo, Rep.","Nigeria","Togo","Liberia","Chad","Ghana","Guinea-Bissau","Burkina Faso","Eritrea","Djibouti","Guinea","Angola","Equatorial Guinea","Mauritius","Mali","Benin","Sao Tome and Principe","Sierra Leone","Mauritania","Niger","Somalia","Sudan","Gambia","Senegal","Comoros","Madagascar"],"locations":["ZWE","LSO","SWZ","ZAF","NAM","BWA","MWI","ZMB","MOZ","CAF","KEN","TZA","UGA","CIV","CMR","RWA","BDI","GAB","COG","NGA","TGO","LBR","TCD","GHA","GNB","BFA","ERI","DJI","GIN","AGO","GNQ","MUS","MLI","BEN","STP","SLE","MRT","NER","SOM","SDN","GMB","SEN","COM","MDG"],"name":"","z":[1200.0,974.3589743589744,916.6666666666666,747.4747474747476,659.8984771573604,652.1739130434783,601.5625,555.5555555555555,349.7536945812808,349.65034965034965,335.195530726257,331.63265306122446,292.85714285714283,248.75621890547262,222.22222222222223,220.99447513812157,197.6284584980237,157.53424657534248,154.05405405405403,144.82758620689654,135.27397260273972,130.3030303030303,126.2135922330097,89.28571428571428,86.95652173913044,86.33093525179856,82.70676691729324,71.51370679380214,69.1891891891892,67.35751295336787,63.35797254487857,47.61904761904762,45.18518518518518,43.890865954922894,37.03703703703704,36.36363636363636,34.01360544217687,30.43478260869565,29.245283018867926,20.12779552715655,17.964071856287426,16.07142857142857,10.118043844856661,7.8125],"type":"choropleth"}],"name":"2005"},{"data":[{"coloraxis":"coloraxis","geo":"geo","hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003eyear=2006\u003cbr\u003ecountry_code=%{location}\u003cbr\u003eHIV_mortality=%{z}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Zimbabwe","Lesotho","Eswatini","South Africa","Namibia","Malawi","Botswana","Zambia","Mozambique","Central African Republic","Tanzania","Kenya","Uganda","Cote d'Ivoire","Cameroon","Burundi","Rwanda","Gabon","Nigeria","Togo","Congo, Rep.","Chad","Liberia","Guinea-Bissau","Ghana","Eritrea","Djibouti","Burkina Faso","Angola","Guinea","Equatorial Guinea","Mauritius","Benin","Sierra Leone","Mali","Mauritania","Sao Tome and Principe","Niger","Somalia","Sudan","Gambia","Senegal","Comoros","Madagascar"],"locations":["ZWE","LSO","SWZ","ZAF","NAM","MWI","BWA","ZMB","MOZ","CAF","TZA","KEN","UGA","CIV","CMR","BDI","RWA","GAB","NGA","TGO","COG","TCD","LBR","GNB","GHA","ERI","DJI","BFA","AGO","GIN","GNQ","MUS","BEN","SLE","MLI","MRT","STP","NER","SOM","SDN","GMB","SEN","COM","MDG"],"name":"","z":[1111.111111111111,923.0769230769232,907.4074074074075,780.0,603.0150753768844,568.1818181818182,534.75935828877,495.86776859504135,355.7692307692308,342.4657534246575,322.5806451612903,298.1029810298103,256.94444444444446,229.2682926829268,221.5909090909091,190.59720457433292,172.04301075268816,152.31788079470198,147.6510067114094,133.11148086522462,132.8125,121.49532710280374,120.34383954154727,91.54929577464789,86.95652173913044,74.07407407407408,70.09345794392523,69.44444444444444,65.0,62.5,60.60606060606061,47.61904761904762,40.27617951668585,39.14590747330961,37.142857142857146,36.54485049833887,36.144578313253014,30.069930069930074,28.18181818181818,19.375,17.441860465116278,13.91304347826087,9.917355371900825,8.121827411167512],"type":"choropleth"}],"name":"2006"},{"data":[{"coloraxis":"coloraxis","geo":"geo","hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003eyear=2007\u003cbr\u003ecountry_code=%{location}\u003cbr\u003eHIV_mortality=%{z}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Zimbabwe","Eswatini","Lesotho","South Africa","Malawi","Namibia","Botswana","Zambia","Mozambique","Central African Republic","Tanzania","Kenya","Uganda","Cote d'Ivoire","Cameroon","Burundi","Gabon","Nigeria","Togo","Rwanda","Congo, Rep.","Chad","Liberia","Guinea-Bissau","Ghana","Djibouti","Eritrea","Burkina Faso","Angola","Equatorial Guinea","Guinea","Mauritius","Sierra Leone","Benin","Mauritania","Sao Tome and Principe","Gambia","Mali","Niger","Somalia","Sudan","Senegal","Comoros","Madagascar"],"locations":["ZWE","SWZ","LSO","ZAF","MWI","NAM","BWA","ZMB","MOZ","CAF","TZA","KEN","UGA","CIV","CMR","BDI","GAB","NGA","TGO","RWA","COG","TCD","LBR","GNB","GHA","DJI","ERI","BFA","AGO","GNQ","GIN","MUS","SLE","BEN","MRT","STP","GMB","MLI","NER","SOM","SDN","SEN","COM","MDG"],"name":"","z":[1015.625,844.0366972477063,820.5128205128206,772.2772277227723,500.0,495.0495049504951,481.67539267015707,388.88888888888886,347.4178403755869,313.9013452914798,289.8550724637681,260.5263157894737,249.15824915824916,214.2857142857143,211.1111111111111,183.8235294117647,160.25641025641025,143.79084967320262,135.702746365105,125.6544502617801,120.60301507537689,117.11711711711712,108.99182561307903,89.6551724137931,84.7457627118644,68.57142857142857,65.6934306569343,62.83783783783784,62.5,57.6923076923077,53.830227743271216,47.24409448818898,43.47826086956522,35.75418994413408,35.59870550161812,35.294117647058826,33.898305084745765,32.41379310344828,29.054054054054053,27.43362831858407,18.292682926829272,14.406779661016948,9.724473257698541,7.8817733990147785],"type":"choropleth"}],"name":"2007"},{"data":[{"coloraxis":"coloraxis","geo":"geo","hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003eyear=2008\u003cbr\u003ecountry_code=%{location}\u003cbr\u003eHIV_mortality=%{z}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Zimbabwe","Eswatini","South Africa","Lesotho","Malawi","Botswana","Namibia","Mozambique","Zambia","Central African Republic","Uganda","Tanzania","Kenya","Cameroon","Cote d'Ivoire","Burundi","Gabon","Nigeria","Togo","Congo, Rep.","Chad","Djibouti","Liberia","Rwanda","Guinea-Bissau","Ghana","Eritrea","Angola","Equatorial Guinea","Burkina Faso","Guinea","Mauritius","Sierra Leone","Mauritania","Sao Tome and Principe","Benin","Gambia","Mali","Niger","Somalia","Sudan","Senegal","Comoros","Madagascar"],"locations":["ZWE","SWZ","ZAF","LSO","MWI","BWA","NAM","MOZ","ZMB","CAF","UGA","TZA","KEN","CMR","CIV","BDI","GAB","NGA","TGO","COG","TCD","DJI","LBR","RWA","GNB","GHA","ERI","AGO","GNQ","BFA","GIN","MUS","SLE","MRT","STP","BEN","GMB","MLI","NER","SOM","SDN","SEN","COM","MDG"],"name":"","z":[846.1538461538461,781.8181818181818,743.6399217221135,710.6598984771574,442.85714285714283,405.12820512820514,400.0,334.8623853211009,323.07692307692304,263.1578947368421,242.62295081967216,234.7417840375587,232.14285714285714,198.9247311827957,190.69767441860463,176.2632197414806,155.27950310559004,139.2405063291139,130.298273155416,121.654501216545,113.04347826086955,111.98208286674132,102.09424083769633,97.95918367346938,80.53691275167785,78.51239669421487,60.28368794326241,55.55555555555556,55.55555555555556,54.248366013071895,50.505050505050505,47.24409448818898,45.840407470288625,34.59119496855346,34.48275862068965,33.58613217768147,32.967032967032964,31.543624161073826,28.571428571428573,26.495726495726498,16.964285714285715,14.999999999999998,9.538950715421304,8.133971291866029],"type":"choropleth"}],"name":"2008"},{"data":[{"coloraxis":"coloraxis","geo":"geo","hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003eyear=2009\u003cbr\u003ecountry_code=%{location}\u003cbr\u003eHIV_mortality=%{z}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Zimbabwe","Eswatini","Lesotho","South Africa","Malawi","Zambia","Mozambique","Namibia","Botswana","Central African Republic","Tanzania","Uganda","Kenya","Cameroon","Burundi","Cote d'Ivoire","Gabon","Nigeria","Congo, Rep.","Togo","Djibouti","Chad","Liberia","Rwanda","Guinea-Bissau","Ghana","Eritrea","Equatorial Guinea","Angola","Mauritius","Guinea","Sierra Leone","Burkina Faso","Mauritania","Sao Tome and Principe","Gambia","Mali","Benin","Niger","Somalia","Sudan","Senegal","Comoros","Madagascar"],"locations":["ZWE","SWZ","LSO","ZAF","MWI","ZMB","MOZ","NAM","BWA","CAF","TZA","UGA","KEN","CMR","BDI","CIV","GAB","NGA","COG","TGO","DJI","TCD","LBR","RWA","GNB","GHA","ERI","GNQ","AGO","MUS","GIN","SLE","BFA","MRT","STP","GMB","MLI","BEN","NER","SOM","SDN","SEN","COM","MDG"],"name":"","z":[748.091603053435,729.7297297297297,707.0707070707072,657.6402321083173,381.94444444444446,333.33333333333337,330.3571428571429,317.3076923076923,291.4572864321608,242.82560706401765,220.18348623853214,219.04761904761907,198.01980198019803,193.717277486911,167.5977653631285,163.63636363636363,144.57831325301206,129.62962962962962,119.1588785046729,117.55725190839695,109.64912280701753,92.43697478991596,91.37055837563452,84.15841584158416,78.4313725490196,72.28915662650603,58.8235294117647,52.63157894736842,49.10714285714286,46.875,46.53465346534653,46.2046204620462,45.22292993630573,36.58536585365854,33.70786516853932,32.0855614973262,28.571428571428573,28.39116719242902,28.30188679245283,25.833333333333336,16.47398843930636,16.260162601626018,9.345794392523365,7.906976744186046],"type":"choropleth"}],"name":"2009"},{"data":[{"coloraxis":"coloraxis","geo":"geo","hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003eyear=2010\u003cbr\u003ecountry_code=%{location}\u003cbr\u003eHIV_mortality=%{z}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Eswatini","Zimbabwe","South Africa","Malawi","Namibia","Uganda","Tanzania","Nigeria","Rwanda","Mauritius","Sierra Leone","Mauritania","Sao Tome and Principe","Somalia","Niger","Sudan","Senegal","Angola","Benin","Botswana","Burkina Faso","Burundi","Cameroon","Central African Republic","Chad","Comoros","Congo, Rep.","Cote d'Ivoire","Djibouti","Equatorial Guinea","Eritrea","Gabon","Gambia","Ghana","Guinea","Guinea-Bissau","Kenya","Lesotho","Liberia","Madagascar","Mali","Mozambique","Togo","Zambia"],"locations":["SWZ","ZWE","ZAF","MWI","NAM","UGA","TZA","NGA","RWA","MUS","SLE","MRT","STP","SOM","NER","SDN","SEN","AGO","BEN","BWA","BFA","BDI","CMR","CAF","TCD","COM","COG","CIV","DJI","GNQ","ERI","GAB","GMB","GHA","GIN","GNB","KEN","LSO","LBR","MDG","MLI","MOZ","TGO","ZMB"],"name":"","z":[702.7027027027027,582.0895522388059,573.6137667304016,331.0810810810811,270.14218009478674,203.7037037037037,203.125,125.74850299401199,70.87378640776699,46.875,43.40836012861736,38.3480825958702,32.967032967032964,25.203252032520325,24.242424242424242,15.819209039548022,14.285714285714286,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"type":"choropleth"}],"name":"2010"}]);
+                        }).then(function(){
+                            
+var gd = document.getElementById('46b14420-9a5c-4116-9f56-725290a8210a');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div>
+</div>
+</div>
+<div id="b0ec13bb" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a horizontal bar chart for the HIV-Mortality</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>hiv_mortality_bar <span class="op">=</span> px.bar(</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    sub_sahara_combined.query(<span class="st">"HIV_mortality != 0"</span>), <span class="co"># removing the 0 values.</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"HIV_mortality"</span>,</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">"country"</span>,</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># orientation="v",</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>    animation_frame<span class="op">=</span><span class="st">"year"</span>,</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    text_auto <span class="op">=</span> <span class="st">"True"</span>,</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>    range_x<span class="op">=</span>[<span class="dv">0</span>, sub_sahara_combined[<span class="st">"HIV_mortality"</span>].<span class="bu">max</span>() <span class="op">+</span> <span class="dv">100</span>],</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>sub_sahara_combined.query(<span class="st">"year == 2010"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="39">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Country</th>
+<th data-quarto-table-cell-role="th">country_code</th>
+<th data-quarto-table-cell-role="th">country</th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">HIV_deaths</th>
+<th data-quarto-table-cell-role="th">population</th>
+<th data-quarto-table-cell-role="th">health_budget_prop</th>
+<th data-quarto-table-cell-role="th">HIV_mortality</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">149</td>
+<td>Eswatini</td>
+<td>SWZ</td>
+<td>Eswatini</td>
+<td>2010</td>
+<td>7800.0</td>
+<td>1110000.0</td>
+<td>10.10</td>
+<td>702.702703</td>
+</tr>
+<tr class="even">
 <td data-quarto-table-cell-role="th">439</td>
 <td>Zimbabwe</td>
 <td>ZWE</td>
@@ -2399,32 +2473,528 @@ total_deaths
 <td>NaN</td>
 <td>582.089552</td>
 </tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">379</td>
+<td>South Africa</td>
+<td>ZAF</td>
+<td>South Africa</td>
+<td>2010</td>
+<td>300000.0</td>
+<td>52300000.0</td>
+<td>11.90</td>
+<td>573.613767</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">249</td>
+<td>Malawi</td>
+<td>MWI</td>
+<td>Malawi</td>
+<td>2010</td>
+<td>49000.0</td>
+<td>14800000.0</td>
+<td>14.20</td>
+<td>331.081081</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">299</td>
+<td>Namibia</td>
+<td>NAM</td>
+<td>Namibia</td>
+<td>2010</td>
+<td>5700.0</td>
+<td>2110000.0</td>
+<td>12.10</td>
+<td>270.142180</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">419</td>
+<td>Uganda</td>
+<td>UGA</td>
+<td>Uganda</td>
+<td>2010</td>
+<td>66000.0</td>
+<td>32400000.0</td>
+<td>12.10</td>
+<td>203.703704</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">399</td>
+<td>Tanzania</td>
+<td>TZA</td>
+<td>Tanzania</td>
+<td>2010</td>
+<td>91000.0</td>
+<td>44800000.0</td>
+<td>13.80</td>
+<td>203.125000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">319</td>
+<td>Nigeria</td>
+<td>NGA</td>
+<td>Nigeria</td>
+<td>2010</td>
+<td>210000.0</td>
+<td>167000000.0</td>
+<td>4.41</td>
+<td>125.748503</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">329</td>
+<td>Rwanda</td>
+<td>RWA</td>
+<td>Rwanda</td>
+<td>2010</td>
+<td>7300.0</td>
+<td>10300000.0</td>
+<td>20.10</td>
+<td>70.873786</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">279</td>
+<td>Mauritius</td>
+<td>MUS</td>
+<td>Mauritius</td>
+<td>2010</td>
+<td>600.0</td>
+<td>1280000.0</td>
+<td>9.82</td>
+<td>46.875000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">359</td>
+<td>Sierra Leone</td>
+<td>SLE</td>
+<td>Sierra Leone</td>
+<td>2010</td>
+<td>2700.0</td>
+<td>6220000.0</td>
+<td>6.35</td>
+<td>43.408360</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">269</td>
+<td>Mauritania</td>
+<td>MRT</td>
+<td>Mauritania</td>
+<td>2010</td>
+<td>1300.0</td>
+<td>3390000.0</td>
+<td>7.30</td>
+<td>38.348083</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">339</td>
+<td>Sao Tome and Principe</td>
+<td>STP</td>
+<td>Sao Tome and Principe</td>
+<td>2010</td>
+<td>60.0</td>
+<td>182000.0</td>
+<td>13.20</td>
+<td>32.967033</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">369</td>
+<td>Somalia</td>
+<td>SOM</td>
+<td>Somalia</td>
+<td>2010</td>
+<td>3100.0</td>
+<td>12300000.0</td>
+<td>NaN</td>
+<td>25.203252</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">309</td>
+<td>Niger</td>
+<td>NER</td>
+<td>Niger</td>
+<td>2010</td>
+<td>4000.0</td>
+<td>16500000.0</td>
+<td>11.10</td>
+<td>24.242424</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">389</td>
+<td>Sudan</td>
+<td>SDN</td>
+<td>Sudan</td>
+<td>2010</td>
+<td>5600.0</td>
+<td>35400000.0</td>
+<td>9.76</td>
+<td>15.819209</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">349</td>
+<td>Senegal</td>
+<td>SEN</td>
+<td>Senegal</td>
+<td>2010</td>
+<td>1800.0</td>
+<td>12600000.0</td>
+<td>11.60</td>
+<td>14.285714</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>Angola</td>
+<td>AGO</td>
+<td>Angola</td>
+<td>2010</td>
+<td>NaN</td>
+<td>23300000.0</td>
+<td>7.18</td>
+<td>0.000000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">19</td>
+<td>Benin</td>
+<td>BEN</td>
+<td>Benin</td>
+<td>2010</td>
+<td>NaN</td>
+<td>9800000.0</td>
+<td>9.60</td>
+<td>0.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">29</td>
+<td>Botswana</td>
+<td>BWA</td>
+<td>Botswana</td>
+<td>2010</td>
+<td>NaN</td>
+<td>2030000.0</td>
+<td>17.00</td>
+<td>0.000000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">39</td>
+<td>Burkina Faso</td>
+<td>BFA</td>
+<td>Burkina Faso</td>
+<td>2010</td>
+<td>NaN</td>
+<td>16200000.0</td>
+<td>13.50</td>
+<td>0.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">49</td>
+<td>Burundi</td>
+<td>BDI</td>
+<td>Burundi</td>
+<td>2010</td>
+<td>NaN</td>
+<td>9380000.0</td>
+<td>8.14</td>
+<td>0.000000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">59</td>
+<td>Cameroon</td>
+<td>CMR</td>
+<td>Cameroon</td>
+<td>2010</td>
+<td>NaN</td>
+<td>19700000.0</td>
+<td>8.53</td>
+<td>0.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">69</td>
+<td>Central African Republic</td>
+<td>CAF</td>
+<td>Central African Republic</td>
+<td>2010</td>
+<td>NaN</td>
+<td>4490000.0</td>
+<td>8.45</td>
+<td>0.000000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">79</td>
+<td>Chad</td>
+<td>TCD</td>
+<td>Chad</td>
+<td>2010</td>
+<td>NaN</td>
+<td>12300000.0</td>
+<td>3.27</td>
+<td>0.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">89</td>
+<td>Comoros</td>
+<td>COM</td>
+<td>Comoros</td>
+<td>2010</td>
+<td>NaN</td>
+<td>655000.0</td>
+<td>13.10</td>
+<td>0.000000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">99</td>
+<td>Congo (Brazzaville)</td>
+<td>COG</td>
+<td>Congo, Rep.</td>
+<td>2010</td>
+<td>NaN</td>
+<td>4460000.0</td>
+<td>5.29</td>
+<td>0.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">109</td>
+<td>Cote d'Ivoire</td>
+<td>CIV</td>
+<td>Cote d'Ivoire</td>
+<td>2010</td>
+<td>NaN</td>
+<td>22500000.0</td>
+<td>5.06</td>
+<td>0.000000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">119</td>
+<td>Djibouti</td>
+<td>DJI</td>
+<td>Djibouti</td>
+<td>2010</td>
+<td>NaN</td>
+<td>930000.0</td>
+<td>14.20</td>
+<td>0.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">129</td>
+<td>Equatorial Guinea</td>
+<td>GNQ</td>
+<td>Equatorial Guinea</td>
+<td>2010</td>
+<td>NaN</td>
+<td>1190000.0</td>
+<td>6.96</td>
+<td>0.000000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">139</td>
+<td>Eritrea</td>
+<td>ERI</td>
+<td>Eritrea</td>
+<td>2010</td>
+<td>NaN</td>
+<td>2950000.0</td>
+<td>3.60</td>
+<td>0.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">159</td>
+<td>Gabon</td>
+<td>GAB</td>
+<td>Gabon</td>
+<td>2010</td>
+<td>NaN</td>
+<td>1720000.0</td>
+<td>6.63</td>
+<td>0.000000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">169</td>
+<td>Gambia</td>
+<td>GMB</td>
+<td>Gambia</td>
+<td>2010</td>
+<td>NaN</td>
+<td>1930000.0</td>
+<td>11.30</td>
+<td>0.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">179</td>
+<td>Ghana</td>
+<td>GHA</td>
+<td>Ghana</td>
+<td>2010</td>
+<td>NaN</td>
+<td>25500000.0</td>
+<td>12.10</td>
+<td>0.000000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">189</td>
+<td>Guinea</td>
+<td>GIN</td>
+<td>Guinea</td>
+<td>2010</td>
+<td>NaN</td>
+<td>10400000.0</td>
+<td>1.84</td>
+<td>0.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">199</td>
+<td>Guinea-Bissau</td>
+<td>GNB</td>
+<td>Guinea-Bissau</td>
+<td>2010</td>
+<td>NaN</td>
+<td>1570000.0</td>
+<td>4.14</td>
+<td>0.000000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">209</td>
+<td>Kenya</td>
+<td>KEN</td>
+<td>Kenya</td>
+<td>2010</td>
+<td>NaN</td>
+<td>41600000.0</td>
+<td>7.31</td>
+<td>0.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">219</td>
+<td>Lesotho</td>
+<td>LSO</td>
+<td>Lesotho</td>
+<td>2010</td>
+<td>NaN</td>
+<td>2000000.0</td>
+<td>13.40</td>
+<td>0.000000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">229</td>
+<td>Liberia</td>
+<td>LBR</td>
+<td>Liberia</td>
+<td>2010</td>
+<td>NaN</td>
+<td>4060000.0</td>
+<td>11.10</td>
+<td>0.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">239</td>
+<td>Madagascar</td>
+<td>MDG</td>
+<td>Madagascar</td>
+<td>2010</td>
+<td>NaN</td>
+<td>22200000.0</td>
+<td>14.70</td>
+<td>0.000000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">259</td>
+<td>Mali</td>
+<td>MLI</td>
+<td>Mali</td>
+<td>2010</td>
+<td>NaN</td>
+<td>15900000.0</td>
+<td>10.60</td>
+<td>0.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">289</td>
+<td>Mozambique</td>
+<td>MOZ</td>
+<td>Mozambique</td>
+<td>2010</td>
+<td>NaN</td>
+<td>23000000.0</td>
+<td>12.20</td>
+<td>0.000000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">409</td>
+<td>Togo</td>
+<td>TGO</td>
+<td>Togo</td>
+<td>2010</td>
+<td>NaN</td>
+<td>6730000.0</td>
+<td>15.40</td>
+<td>0.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">429</td>
+<td>Zambia</td>
+<td>ZMB</td>
+<td>Zambia</td>
+<td>2010</td>
+<td>NaN</td>
+<td>14000000.0</td>
+<td>15.60</td>
+<td>0.000000</td>
+</tr>
 </tbody>
 </table>
 
-<p>440 rows × 8 columns</p>
 </div>
 </div>
 </div>
-<div id="737ab4fd" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Total sum of HIV deaths:</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>px.choropleth(</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    sub_sahara_combined,</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    locations<span class="op">=</span><span class="st">"country_code"</span>,</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    scope<span class="op">=</span><span class="st">"africa"</span>,</span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">"HIV_mortality"</span>,</span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    color_continuous_scale<span class="op">=</span>px.colors.sequential.YlOrRd,</span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    hover_name<span class="op">=</span><span class="st">"country"</span>,</span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>    animation_frame<span class="op">=</span><span class="st">"year"</span>,</span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"HIV Related Mortality per 100,000 people in the Sub-Sahara Region 2001 - 2010"</span>,</span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+</section>
+<section id="budget-proportions" class="level2">
+<h2 class="anchored" data-anchor-id="budget-proportions">2. Budget Proportions:</h2>
+<section id="text-box" class="level4">
+<h4 class="anchored" data-anchor-id="text-box">Text-box</h4>
+<div id="0319bf45" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Highest Value </span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>max_budget_prop <span class="op">=</span> sub_sahara_combined[<span class="st">"health_budget_prop"</span>].<span class="bu">max</span>()</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>max_budget_prop <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>max_budget_prop<span class="sc">:.1f}</span><span class="ss">%"</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>max_budget_prop</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Lowest proportion </span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>min_budget_prop <span class="op">=</span> sub_sahara_combined[<span class="st">"health_budget_prop"</span>].<span class="bu">min</span>()</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>min_budget_prop <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>min_budget_prop<span class="sc">:.1f}</span><span class="ss">%"</span></span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>min_budget_prop</span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Average proportion </span></span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a>avg_budget_df <span class="op">=</span> sub_sahara_combined.agg(average <span class="op">=</span> (<span class="st">"health_budget_prop"</span>,<span class="st">"mean"</span>)).<span class="bu">round</span>(<span class="dv">2</span>)</span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a>avg_budget_prop <span class="op">=</span>  avg_budget_df[<span class="st">"health_budget_prop"</span>].tolist()[<span class="dv">0</span>]</span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a>avg_budget_prop</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="40">
+<pre><code>9.94</code></pre>
+</div>
+</div>
+<p>26.9%</p>
+<p>1.8%</p>
+<p>9.94%</p>
+</section>
+<section id="box-plot" class="level4">
+<h4 class="anchored" data-anchor-id="box-plot">Box plot</h4>
+<div id="4c7ce5d2" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>hiv_death_box <span class="op">=</span> px.strip(</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    sub_sahara_combined, </span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="st">"year"</span>, </span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> <span class="st">"health_budget_prop"</span>,</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    color <span class="op">=</span> <span class="st">"country"</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>hiv_death_box</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div>                            <div id="ca582cd0-f0b4-441b-be3a-2985c4d2133c" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("ca582cd0-f0b4-441b-be3a-2985c4d2133c")) {                    Plotly.newPlot(                        "ca582cd0-f0b4-441b-be3a-2985c4d2133c",                        [{"coloraxis":"coloraxis","geo":"geo","hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003eyear=2001\u003cbr\u003ecountry_code=%{location}\u003cbr\u003eHIV_mortality=%{z}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Angola","Benin","Botswana","Burkina Faso","Burundi","Cameroon","Central African Republic","Chad","Comoros","Congo, Rep.","Cote d'Ivoire","Djibouti","Equatorial Guinea","Eritrea","Eswatini","Gabon","Gambia","Ghana","Guinea","Guinea-Bissau","Kenya","Lesotho","Liberia","Madagascar","Malawi","Mali","Mauritania","Mauritius","Mozambique","Namibia","Niger","Nigeria","Rwanda","Sao Tome and Principe","Senegal","Sierra Leone","Somalia","South Africa","Sudan","Tanzania","Togo","Uganda","Zambia","Zimbabwe"],"locations":["AGO","BEN","BWA","BFA","BDI","CMR","CAF","TCD","COM","COG","CIV","DJI","GNQ","ERI","SWZ","GAB","GMB","GHA","GIN","GNB","KEN","LSO","LBR","MDG","MWI","MLI","MRT","MUS","MOZ","NAM","NER","NGA","RWA","STP","SEN","SLE","SOM","ZAF","SDN","TZA","TGO","UGA","ZMB","ZWE"],"name":"","z":[59.880239520958085,41.61073825503356,877.1929824561403,121.95121951219512,211.16138763197586,202.61437908496734,382.65306122448976,101.13636363636364,10.96892138939671,177.37003058103977,280.2197802197802,77.82101167315176,40.0,77.92207792207792,638.0952380952381,152.67175572519085,20.0,79.20792079207921,73.77049180327869,47.61904761904762,379.746835443038,700.0,129.13907284768214,7.647058823529411,543.1034482758621,60.50420168067227,22.388059701492537,28.45528455284553,232.43243243243242,462.3655913978494,26.89075630252101,115.3846153846154,253.31724969843188,41.09589041095891,13.72549019607843,12.79317697228145,30.43478260869565,441.1764705882353,21.05263157894737,369.3181818181818,121.21212121212122,404.8582995951417,660.1941747572815,1250.0],"type":"choropleth"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"geo":{"domain":{"x":[0.0,1.0],"y":[0.0,1.0]},"center":{},"scope":"africa"},"coloraxis":{"colorbar":{"title":{"text":"HIV_mortality"}},"colorscale":[[0.0,"rgb(255,255,204)"],[0.125,"rgb(255,237,160)"],[0.25,"rgb(254,217,118)"],[0.375,"rgb(254,178,76)"],[0.5,"rgb(253,141,60)"],[0.625,"rgb(252,78,42)"],[0.75,"rgb(227,26,28)"],[0.875,"rgb(189,0,38)"],[1.0,"rgb(128,0,38)"]]},"legend":{"tracegroupgap":0},"title":{"text":"HIV Related Mortality per 100,000 people in the Sub-Sahara Region 2001 - 2010"},"updatemenus":[{"buttons":[{"args":[null,{"frame":{"duration":500,"redraw":true},"mode":"immediate","fromcurrent":true,"transition":{"duration":500,"easing":"linear"}}],"label":"&#9654;","method":"animate"},{"args":[[null],{"frame":{"duration":0,"redraw":true},"mode":"immediate","fromcurrent":true,"transition":{"duration":0,"easing":"linear"}}],"label":"&#9724;","method":"animate"}],"direction":"left","pad":{"r":10,"t":70},"showactive":false,"type":"buttons","x":0.1,"xanchor":"right","y":0,"yanchor":"top"}],"sliders":[{"active":0,"currentvalue":{"prefix":"year="},"len":0.9,"pad":{"b":10,"t":60},"steps":[{"args":[["2001"],{"frame":{"duration":0,"redraw":true},"mode":"immediate","fromcurrent":true,"transition":{"duration":0,"easing":"linear"}}],"label":"2001","method":"animate"},{"args":[["2002"],{"frame":{"duration":0,"redraw":true},"mode":"immediate","fromcurrent":true,"transition":{"duration":0,"easing":"linear"}}],"label":"2002","method":"animate"},{"args":[["2003"],{"frame":{"duration":0,"redraw":true},"mode":"immediate","fromcurrent":true,"transition":{"duration":0,"easing":"linear"}}],"label":"2003","method":"animate"},{"args":[["2004"],{"frame":{"duration":0,"redraw":true},"mode":"immediate","fromcurrent":true,"transition":{"duration":0,"easing":"linear"}}],"label":"2004","method":"animate"},{"args":[["2005"],{"frame":{"duration":0,"redraw":true},"mode":"immediate","fromcurrent":true,"transition":{"duration":0,"easing":"linear"}}],"label":"2005","method":"animate"},{"args":[["2006"],{"frame":{"duration":0,"redraw":true},"mode":"immediate","fromcurrent":true,"transition":{"duration":0,"easing":"linear"}}],"label":"2006","method":"animate"},{"args":[["2007"],{"frame":{"duration":0,"redraw":true},"mode":"immediate","fromcurrent":true,"transition":{"duration":0,"easing":"linear"}}],"label":"2007","method":"animate"},{"args":[["2008"],{"frame":{"duration":0,"redraw":true},"mode":"immediate","fromcurrent":true,"transition":{"duration":0,"easing":"linear"}}],"label":"2008","method":"animate"},{"args":[["2009"],{"frame":{"duration":0,"redraw":true},"mode":"immediate","fromcurrent":true,"transition":{"duration":0,"easing":"linear"}}],"label":"2009","method":"animate"},{"args":[["2010"],{"frame":{"duration":0,"redraw":true},"mode":"immediate","fromcurrent":true,"transition":{"duration":0,"easing":"linear"}}],"label":"2010","method":"animate"}],"x":0.1,"xanchor":"left","y":0,"yanchor":"top"}]},                        {"responsive": true}                    ).then(function(){
-                            Plotly.addFrames('ca582cd0-f0b4-441b-be3a-2985c4d2133c', [{"data":[{"coloraxis":"coloraxis","geo":"geo","hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003eyear=2001\u003cbr\u003ecountry_code=%{location}\u003cbr\u003eHIV_mortality=%{z}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Angola","Benin","Botswana","Burkina Faso","Burundi","Cameroon","Central African Republic","Chad","Comoros","Congo, Rep.","Cote d'Ivoire","Djibouti","Equatorial Guinea","Eritrea","Eswatini","Gabon","Gambia","Ghana","Guinea","Guinea-Bissau","Kenya","Lesotho","Liberia","Madagascar","Malawi","Mali","Mauritania","Mauritius","Mozambique","Namibia","Niger","Nigeria","Rwanda","Sao Tome and Principe","Senegal","Sierra Leone","Somalia","South Africa","Sudan","Tanzania","Togo","Uganda","Zambia","Zimbabwe"],"locations":["AGO","BEN","BWA","BFA","BDI","CMR","CAF","TCD","COM","COG","CIV","DJI","GNQ","ERI","SWZ","GAB","GMB","GHA","GIN","GNB","KEN","LSO","LBR","MDG","MWI","MLI","MRT","MUS","MOZ","NAM","NER","NGA","RWA","STP","SEN","SLE","SOM","ZAF","SDN","TZA","TGO","UGA","ZMB","ZWE"],"name":"","z":[59.880239520958085,41.61073825503356,877.1929824561403,121.95121951219512,211.16138763197586,202.61437908496734,382.65306122448976,101.13636363636364,10.96892138939671,177.37003058103977,280.2197802197802,77.82101167315176,40.0,77.92207792207792,638.0952380952381,152.67175572519085,20.0,79.20792079207921,73.77049180327869,47.61904761904762,379.746835443038,700.0,129.13907284768214,7.647058823529411,543.1034482758621,60.50420168067227,22.388059701492537,28.45528455284553,232.43243243243242,462.3655913978494,26.89075630252101,115.3846153846154,253.31724969843188,41.09589041095891,13.72549019607843,12.79317697228145,30.43478260869565,441.1764705882353,21.05263157894737,369.3181818181818,121.21212121212122,404.8582995951417,660.1941747572815,1250.0],"type":"choropleth"}],"name":"2001"},{"data":[{"coloraxis":"coloraxis","geo":"geo","hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003eyear=2002\u003cbr\u003ecountry_code=%{location}\u003cbr\u003eHIV_mortality=%{z}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Angola","Benin","Botswana","Burkina Faso","Burundi","Cameroon","Central African Republic","Chad","Comoros","Congo, Rep.","Cote d'Ivoire","Djibouti","Equatorial Guinea","Eritrea","Eswatini","Gabon","Gambia","Ghana","Guinea","Guinea-Bissau","Kenya","Lesotho","Liberia","Madagascar","Malawi","Mali","Mauritania","Mauritius","Mozambique","Namibia","Niger","Nigeria","Rwanda","Sao Tome and Principe","Senegal","Sierra Leone","Somalia","South Africa","Sudan","Tanzania","Togo","Uganda","Zambia","Zimbabwe"],"locations":["AGO","BEN","BWA","BFA","BDI","CMR","CAF","TCD","COM","COG","CIV","DJI","GNQ","ERI","SWZ","GAB","GMB","GHA","GIN","GNB","KEN","LSO","LBR","MDG","MWI","MLI","MRT","MUS","MOZ","NAM","NER","NGA","RWA","STP","SEN","SLE","SOM","ZAF","SDN","TZA","TGO","UGA","ZMB","ZWE"],"name":"","z":[63.58381502890173,42.96875,919.5402298850574,110.23622047244095,219.94134897360706,210.19108280254778,374.0648379052369,109.64912280701753,10.73345259391771,173.13432835820896,278.0748663101604,75.37688442211055,37.59398496240602,83.68200836820083,726.4150943396227,170.37037037037038,19.48051948051948,86.95652173913044,74.97116493656286,46.51162790697675,398.77300613496936,804.0201005025126,132.6860841423948,8.0,563.0252100840336,60.162601626016254,21.8978102189781,28.45528455284553,263.1578947368421,529.1005291005291,27.64227642276423,127.81954887218045,250.0,40.0,14.285714285714286,22.132796780684103,30.366492146596855,541.6666666666666,21.575342465753423,360.1108033240997,131.2384473197782,380.39215686274514,650.9433962264151,1322.3140495867767],"type":"choropleth"}],"name":"2002"},{"data":[{"coloraxis":"coloraxis","geo":"geo","hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003eyear=2003\u003cbr\u003ecountry_code=%{location}\u003cbr\u003eHIV_mortality=%{z}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Angola","Benin","Botswana","Burkina Faso","Burundi","Cameroon","Central African Republic","Chad","Comoros","Congo, Rep.","Cote d'Ivoire","Djibouti","Equatorial Guinea","Eritrea","Eswatini","Gabon","Gambia","Ghana","Guinea","Guinea-Bissau","Kenya","Lesotho","Liberia","Madagascar","Malawi","Mali","Mauritania","Mauritius","Mozambique","Namibia","Niger","Nigeria","Rwanda","Sao Tome and Principe","Senegal","Sierra Leone","Somalia","South Africa","Sudan","Tanzania","Togo","Uganda","Zambia","Zimbabwe"],"locations":["AGO","BEN","BWA","BFA","BDI","CMR","CAF","TCD","COM","COG","CIV","DJI","GNQ","ERI","SWZ","GAB","GMB","GHA","GIN","GNB","KEN","LSO","LBR","MDG","MWI","MLI","MRT","MUS","MOZ","NAM","NER","NGA","RWA","STP","SEN","SLE","SOM","ZAF","SDN","TZA","TGO","UGA","ZMB","ZWE"],"name":"","z":[67.0391061452514,44.24778761061947,955.056179775281,106.8702290076336,213.0681818181818,216.04938271604937,390.24390243902445,115.91148577449948,10.526315789473685,171.0144927536232,277.4869109947644,73.71007371007371,35.37735849056604,84.33734939759036,794.392523364486,181.15942028985506,18.987341772151897,89.2018779342723,74.40811724915446,45.45454545454545,385.7566765578635,904.5226130653266,134.6153846153846,7.734806629834254,581.9672131147541,58.26771653543307,21.428571428571427,28.225806451612907,298.96907216494844,572.9166666666666,28.90625,138.6861313868613,244.47031431897554,38.96103896103896,14.953271028037385,27.027027027027028,30.272452068617557,618.5567010309278,21.40468227424749,350.4043126684636,136.93693693693695,352.2727272727273,645.4545454545454,1311.4754098360656],"type":"choropleth"}],"name":"2003"},{"data":[{"coloraxis":"coloraxis","geo":"geo","hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003eyear=2004\u003cbr\u003ecountry_code=%{location}\u003cbr\u003eHIV_mortality=%{z}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Angola","Benin","Botswana","Burkina Faso","Burundi","Cameroon","Central African Republic","Chad","Comoros","Congo, Rep.","Cote d'Ivoire","Djibouti","Equatorial Guinea","Eritrea","Eswatini","Gabon","Gambia","Ghana","Guinea","Guinea-Bissau","Kenya","Lesotho","Liberia","Madagascar","Malawi","Mali","Mauritania","Mauritius","Mozambique","Namibia","Niger","Nigeria","Rwanda","Sao Tome and Principe","Senegal","Sierra Leone","Somalia","South Africa","Sudan","Tanzania","Togo","Uganda","Zambia","Zimbabwe"],"locations":["AGO","BEN","BWA","BFA","BDI","CMR","CAF","TCD","COM","COG","CIV","DJI","GNQ","ERI","SWZ","GAB","GMB","GHA","GIN","GNB","KEN","LSO","LBR","MDG","MWI","MLI","MRT","MUS","MOZ","NAM","NER","NGA","RWA","STP","SEN","SLE","SOM","ZAF","SDN","TZA","TGO","UGA","ZMB","ZWE"],"name":"","z":[64.51612903225806,44.11764705882353,828.7292817679557,96.2962962962963,205.1983584131327,216.86746987951804,381.86157517899755,120.96774193548387,10.327022375215147,165.266106442577,270.4081632653061,72.63922518159806,33.333333333333336,84.61538461538461,869.1588785046729,176.05633802816902,18.51851851851852,91.32420091324201,73.9514348785872,81.48148148148148,374.63976945244957,964.4670050761422,136.0759493670886,8.064516129032258,592.0,54.19847328244275,20.905923344947734,27.999999999999996,328.2828282828283,618.5567010309278,30.075187969924812,148.93617021276597,238.09523809523813,37.974683544303794,15.454545454545455,31.71641791044776,30.097087378640776,693.8775510204082,20.915032679738562,341.20734908136484,140.35087719298244,327.20588235294116,619.4690265486726,1209.6774193548388],"type":"choropleth"}],"name":"2004"},{"data":[{"coloraxis":"coloraxis","geo":"geo","hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003eyear=2005\u003cbr\u003ecountry_code=%{location}\u003cbr\u003eHIV_mortality=%{z}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Angola","Benin","Botswana","Burkina Faso","Burundi","Cameroon","Central African Republic","Chad","Comoros","Congo, Rep.","Cote d'Ivoire","Djibouti","Equatorial Guinea","Eritrea","Eswatini","Gabon","Gambia","Ghana","Guinea","Guinea-Bissau","Kenya","Lesotho","Liberia","Madagascar","Malawi","Mali","Mauritania","Mauritius","Mozambique","Namibia","Niger","Nigeria","Rwanda","Sao Tome and Principe","Senegal","Sierra Leone","Somalia","South Africa","Sudan","Tanzania","Togo","Uganda","Zambia","Zimbabwe"],"locations":["AGO","BEN","BWA","BFA","BDI","CMR","CAF","TCD","COM","COG","CIV","DJI","GNQ","ERI","SWZ","GAB","GMB","GHA","GIN","GNB","KEN","LSO","LBR","MDG","MWI","MLI","MRT","MUS","MOZ","NAM","NER","NGA","RWA","STP","SEN","SLE","SOM","ZAF","SDN","TZA","TGO","UGA","ZMB","ZWE"],"name":"","z":[67.35751295336787,43.890865954922894,652.1739130434783,86.33093525179856,197.6284584980237,222.22222222222223,349.65034965034965,126.2135922330097,10.118043844856661,154.05405405405403,248.75621890547262,71.51370679380214,63.35797254487857,82.70676691729324,916.6666666666666,157.53424657534248,17.964071856287426,89.28571428571428,69.1891891891892,86.95652173913044,335.195530726257,974.3589743589744,130.3030303030303,7.8125,601.5625,45.18518518518518,34.01360544217687,47.61904761904762,349.7536945812808,659.8984771573604,30.43478260869565,144.82758620689654,220.99447513812157,37.03703703703704,16.07142857142857,36.36363636363636,29.245283018867926,747.4747474747476,20.12779552715655,331.63265306122446,135.27397260273972,292.85714285714283,555.5555555555555,1200.0],"type":"choropleth"}],"name":"2005"},{"data":[{"coloraxis":"coloraxis","geo":"geo","hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003eyear=2006\u003cbr\u003ecountry_code=%{location}\u003cbr\u003eHIV_mortality=%{z}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Angola","Benin","Botswana","Burkina Faso","Burundi","Cameroon","Central African Republic","Chad","Comoros","Congo, Rep.","Cote d'Ivoire","Djibouti","Equatorial Guinea","Eritrea","Eswatini","Gabon","Gambia","Ghana","Guinea","Guinea-Bissau","Kenya","Lesotho","Liberia","Madagascar","Malawi","Mali","Mauritania","Mauritius","Mozambique","Namibia","Niger","Nigeria","Rwanda","Sao Tome and Principe","Senegal","Sierra Leone","Somalia","South Africa","Sudan","Tanzania","Togo","Uganda","Zambia","Zimbabwe"],"locations":["AGO","BEN","BWA","BFA","BDI","CMR","CAF","TCD","COM","COG","CIV","DJI","GNQ","ERI","SWZ","GAB","GMB","GHA","GIN","GNB","KEN","LSO","LBR","MDG","MWI","MLI","MRT","MUS","MOZ","NAM","NER","NGA","RWA","STP","SEN","SLE","SOM","ZAF","SDN","TZA","TGO","UGA","ZMB","ZWE"],"name":"","z":[65.0,40.27617951668585,534.75935828877,69.44444444444444,190.59720457433292,221.5909090909091,342.4657534246575,121.49532710280374,9.917355371900825,132.8125,229.2682926829268,70.09345794392523,60.60606060606061,74.07407407407408,907.4074074074075,152.31788079470198,17.441860465116278,86.95652173913044,62.5,91.54929577464789,298.1029810298103,923.0769230769232,120.34383954154727,8.121827411167512,568.1818181818182,37.142857142857146,36.54485049833887,47.61904761904762,355.7692307692308,603.0150753768844,30.069930069930074,147.6510067114094,172.04301075268816,36.144578313253014,13.91304347826087,39.14590747330961,28.18181818181818,780.0,19.375,322.5806451612903,133.11148086522462,256.94444444444446,495.86776859504135,1111.111111111111],"type":"choropleth"}],"name":"2006"},{"data":[{"coloraxis":"coloraxis","geo":"geo","hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003eyear=2007\u003cbr\u003ecountry_code=%{location}\u003cbr\u003eHIV_mortality=%{z}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Angola","Benin","Botswana","Burkina Faso","Burundi","Cameroon","Central African Republic","Chad","Comoros","Congo, Rep.","Cote d'Ivoire","Djibouti","Equatorial Guinea","Eritrea","Eswatini","Gabon","Gambia","Ghana","Guinea","Guinea-Bissau","Kenya","Lesotho","Liberia","Madagascar","Malawi","Mali","Mauritania","Mauritius","Mozambique","Namibia","Niger","Nigeria","Rwanda","Sao Tome and Principe","Senegal","Sierra Leone","Somalia","South Africa","Sudan","Tanzania","Togo","Uganda","Zambia","Zimbabwe"],"locations":["AGO","BEN","BWA","BFA","BDI","CMR","CAF","TCD","COM","COG","CIV","DJI","GNQ","ERI","SWZ","GAB","GMB","GHA","GIN","GNB","KEN","LSO","LBR","MDG","MWI","MLI","MRT","MUS","MOZ","NAM","NER","NGA","RWA","STP","SEN","SLE","SOM","ZAF","SDN","TZA","TGO","UGA","ZMB","ZWE"],"name":"","z":[62.5,35.75418994413408,481.67539267015707,62.83783783783784,183.8235294117647,211.1111111111111,313.9013452914798,117.11711711711712,9.724473257698541,120.60301507537689,214.2857142857143,68.57142857142857,57.6923076923077,65.6934306569343,844.0366972477063,160.25641025641025,33.898305084745765,84.7457627118644,53.830227743271216,89.6551724137931,260.5263157894737,820.5128205128206,108.99182561307903,7.8817733990147785,500.0,32.41379310344828,35.59870550161812,47.24409448818898,347.4178403755869,495.0495049504951,29.054054054054053,143.79084967320262,125.6544502617801,35.294117647058826,14.406779661016948,43.47826086956522,27.43362831858407,772.2772277227723,18.292682926829272,289.8550724637681,135.702746365105,249.15824915824916,388.88888888888886,1015.625],"type":"choropleth"}],"name":"2007"},{"data":[{"coloraxis":"coloraxis","geo":"geo","hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003eyear=2008\u003cbr\u003ecountry_code=%{location}\u003cbr\u003eHIV_mortality=%{z}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Angola","Benin","Botswana","Burkina Faso","Burundi","Cameroon","Central African Republic","Chad","Comoros","Congo, Rep.","Cote d'Ivoire","Djibouti","Equatorial Guinea","Eritrea","Eswatini","Gabon","Gambia","Ghana","Guinea","Guinea-Bissau","Kenya","Lesotho","Liberia","Madagascar","Malawi","Mali","Mauritania","Mauritius","Mozambique","Namibia","Niger","Nigeria","Rwanda","Sao Tome and Principe","Senegal","Sierra Leone","Somalia","South Africa","Sudan","Tanzania","Togo","Uganda","Zambia","Zimbabwe"],"locations":["AGO","BEN","BWA","BFA","BDI","CMR","CAF","TCD","COM","COG","CIV","DJI","GNQ","ERI","SWZ","GAB","GMB","GHA","GIN","GNB","KEN","LSO","LBR","MDG","MWI","MLI","MRT","MUS","MOZ","NAM","NER","NGA","RWA","STP","SEN","SLE","SOM","ZAF","SDN","TZA","TGO","UGA","ZMB","ZWE"],"name":"","z":[55.55555555555556,33.58613217768147,405.12820512820514,54.248366013071895,176.2632197414806,198.9247311827957,263.1578947368421,113.04347826086955,9.538950715421304,121.654501216545,190.69767441860463,111.98208286674132,55.55555555555556,60.28368794326241,781.8181818181818,155.27950310559004,32.967032967032964,78.51239669421487,50.505050505050505,80.53691275167785,232.14285714285714,710.6598984771574,102.09424083769633,8.133971291866029,442.85714285714283,31.543624161073826,34.59119496855346,47.24409448818898,334.8623853211009,400.0,28.571428571428573,139.2405063291139,97.95918367346938,34.48275862068965,14.999999999999998,45.840407470288625,26.495726495726498,743.6399217221135,16.964285714285715,234.7417840375587,130.298273155416,242.62295081967216,323.07692307692304,846.1538461538461],"type":"choropleth"}],"name":"2008"},{"data":[{"coloraxis":"coloraxis","geo":"geo","hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003eyear=2009\u003cbr\u003ecountry_code=%{location}\u003cbr\u003eHIV_mortality=%{z}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Angola","Benin","Botswana","Burkina Faso","Burundi","Cameroon","Central African Republic","Chad","Comoros","Congo, Rep.","Cote d'Ivoire","Djibouti","Equatorial Guinea","Eritrea","Eswatini","Gabon","Gambia","Ghana","Guinea","Guinea-Bissau","Kenya","Lesotho","Liberia","Madagascar","Malawi","Mali","Mauritania","Mauritius","Mozambique","Namibia","Niger","Nigeria","Rwanda","Sao Tome and Principe","Senegal","Sierra Leone","Somalia","South Africa","Sudan","Tanzania","Togo","Uganda","Zambia","Zimbabwe"],"locations":["AGO","BEN","BWA","BFA","BDI","CMR","CAF","TCD","COM","COG","CIV","DJI","GNQ","ERI","SWZ","GAB","GMB","GHA","GIN","GNB","KEN","LSO","LBR","MDG","MWI","MLI","MRT","MUS","MOZ","NAM","NER","NGA","RWA","STP","SEN","SLE","SOM","ZAF","SDN","TZA","TGO","UGA","ZMB","ZWE"],"name":"","z":[49.10714285714286,28.39116719242902,291.4572864321608,45.22292993630573,167.5977653631285,193.717277486911,242.82560706401765,92.43697478991596,9.345794392523365,119.1588785046729,163.63636363636363,109.64912280701753,52.63157894736842,58.8235294117647,729.7297297297297,144.57831325301206,32.0855614973262,72.28915662650603,46.53465346534653,78.4313725490196,198.01980198019803,707.0707070707072,91.37055837563452,7.906976744186046,381.94444444444446,28.571428571428573,36.58536585365854,46.875,330.3571428571429,317.3076923076923,28.30188679245283,129.62962962962962,84.15841584158416,33.70786516853932,16.260162601626018,46.2046204620462,25.833333333333336,657.6402321083173,16.47398843930636,220.18348623853214,117.55725190839695,219.04761904761907,333.33333333333337,748.091603053435],"type":"choropleth"}],"name":"2009"},{"data":[{"coloraxis":"coloraxis","geo":"geo","hovertemplate":"\u003cb\u003e%{hovertext}\u003c\u002fb\u003e\u003cbr\u003e\u003cbr\u003eyear=2010\u003cbr\u003ecountry_code=%{location}\u003cbr\u003eHIV_mortality=%{z}\u003cextra\u003e\u003c\u002fextra\u003e","hovertext":["Angola","Benin","Botswana","Burkina Faso","Burundi","Cameroon","Central African Republic","Chad","Comoros","Congo, Rep.","Cote d'Ivoire","Djibouti","Equatorial Guinea","Eritrea","Eswatini","Gabon","Gambia","Ghana","Guinea","Guinea-Bissau","Kenya","Lesotho","Liberia","Madagascar","Malawi","Mali","Mauritania","Mauritius","Mozambique","Namibia","Niger","Nigeria","Rwanda","Sao Tome and Principe","Senegal","Sierra Leone","Somalia","South Africa","Sudan","Tanzania","Togo","Uganda","Zambia","Zimbabwe"],"locations":["AGO","BEN","BWA","BFA","BDI","CMR","CAF","TCD","COM","COG","CIV","DJI","GNQ","ERI","SWZ","GAB","GMB","GHA","GIN","GNB","KEN","LSO","LBR","MDG","MWI","MLI","MRT","MUS","MOZ","NAM","NER","NGA","RWA","STP","SEN","SLE","SOM","ZAF","SDN","TZA","TGO","UGA","ZMB","ZWE"],"name":"","z":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,702.7027027027027,null,null,null,null,null,null,null,null,null,331.0810810810811,null,38.3480825958702,46.875,null,270.14218009478674,24.242424242424242,125.74850299401199,70.87378640776699,32.967032967032964,14.285714285714286,43.40836012861736,25.203252032520325,573.6137667304016,15.819209039548022,203.125,null,203.7037037037037,null,582.0895522388059],"type":"choropleth"}],"name":"2010"}]);
-                        }).then(function(){
+<div>                            <div id="7845c47c-a9a9-4698-9f68-e9eea1e2672c" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("7845c47c-a9a9-4698-9f68-e9eea1e2672c")) {                    Plotly.newPlot(                        "7845c47c-a9a9-4698-9f68-e9eea1e2672c",                        [{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Zimbabwe\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Zimbabwe","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#636efa"},"name":"Zimbabwe","offsetgroup":"Zimbabwe","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[9.26,null,null,null,null,null,null,null,null,null],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Botswana\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Botswana","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#EF553B"},"name":"Botswana","offsetgroup":"Botswana","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[9.74,10.6,10.1,17.3,16.9,16.4,18.4,16.6,17.0,17.0],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Lesotho\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Lesotho","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#00cc96"},"name":"Lesotho","offsetgroup":"Lesotho","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[9.05,7.25,8.32,8.35,6.83,8.23,11.0,11.1,10.3,13.4],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Zambia\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Zambia","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#ab63fa"},"name":"Zambia","offsetgroup":"Zambia","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[10.5,13.6,13.3,14.2,14.7,16.4,13.4,15.3,15.7,15.6],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Eswatini\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Eswatini","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#FFA15A"},"name":"Eswatini","offsetgroup":"Eswatini","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[10.2,9.88,12.1,8.78,10.0,12.2,10.4,10.3,10.1,10.1],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Malawi\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Malawi","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#19d3f3"},"name":"Malawi","offsetgroup":"Malawi","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[8.72,13.0,16.7,21.0,20.0,20.0,14.2,14.2,14.2,14.2],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Namibia\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Namibia","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#FF6692"},"name":"Namibia","offsetgroup":"Namibia","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[10.3,11.1,11.3,10.7,12.5,11.1,13.1,12.1,12.1,12.1],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=South Africa\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"South Africa","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#B6E880"},"name":"South Africa","offsetgroup":"South Africa","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[11.2,11.5,11.2,10.3,10.4,10.7,11.1,11.5,11.4,11.9],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Uganda\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Uganda","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#FF97FF"},"name":"Uganda","offsetgroup":"Uganda","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[9.69,9.69,9.95,9.41,11.2,10.2,9.78,10.6,13.6,12.1],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Central African Republic\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Central African Republic","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#FECB52"},"name":"Central African Republic","offsetgroup":"Central African Republic","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[11.5,10.2,12.5,11.0,7.79,9.41,10.4,8.45,8.45,8.45],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Kenya\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Kenya","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#636efa"},"name":"Kenya","offsetgroup":"Kenya","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[8.45,7.97,7.76,7.74,8.06,7.75,7.69,6.28,7.31,7.31],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Tanzania\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Tanzania","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#EF553B"},"name":"Tanzania","offsetgroup":"Tanzania","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[11.2,10.9,11.3,8.48,9.27,14.4,13.7,13.7,12.9,13.8],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Cote d'Ivoire\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Cote d'Ivoire","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#00cc96"},"name":"Cote d'Ivoire","offsetgroup":"Cote d'Ivoire","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[5.62,5.21,4.84,5.26,4.5,4.94,6.6,6.54,5.08,5.06],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Rwanda\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Rwanda","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#ab63fa"},"name":"Rwanda","offsetgroup":"Rwanda","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[9.83,9.08,17.6,14.6,15.6,22.4,22.0,21.9,20.1,20.1],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Mozambique\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Mozambique","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#FFA15A"},"name":"Mozambique","offsetgroup":"Mozambique","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[14.8,15.5,15.0,13.8,18.2,15.2,12.8,10.5,12.2,12.2],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Burundi\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Burundi","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#19d3f3"},"name":"Burundi","offsetgroup":"Burundi","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[8.29,8.23,5.43,9.15,11.6,13.2,11.8,8.16,8.14,8.14],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Cameroon\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Cameroon","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#FF6692"},"name":"Cameroon","offsetgroup":"Cameroon","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[6.79,7.94,8.21,7.07,7.67,7.41,6.77,5.57,7.34,8.53],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Congo, Rep.\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Congo, Rep.","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#B6E880"},"name":"Congo, Rep.","offsetgroup":"Congo, Rep.","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[4.22,3.63,4.35,5.11,6.17,5.45,5.29,5.29,5.29,5.29],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Gabon\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Gabon","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#FF97FF"},"name":"Gabon","offsetgroup":"Gabon","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[4.05,4.52,6.53,6.6,4.73,5.05,5.61,5.13,6.63,6.63],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Liberia\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Liberia","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#FECB52"},"name":"Liberia","offsetgroup":"Liberia","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[11.5,7.17,10.6,11.9,11.1,15.2,17.3,17.2,13.8,11.1],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Burkina Faso\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Burkina Faso","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#636efa"},"name":"Burkina Faso","offsetgroup":"Burkina Faso","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[9.81,11.9,12.5,15.3,18.7,16.2,14.8,16.3,13.6,13.5],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Togo\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Togo","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#EF553B"},"name":"Togo","offsetgroup":"Togo","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[8.48,6.9,9.53,10.1,9.84,10.2,10.6,13.5,15.4,15.4],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Nigeria\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Nigeria","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#00cc96"},"name":"Nigeria","offsetgroup":"Nigeria","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[3.2,3.11,5.11,7.83,6.41,7.06,9.19,7.75,5.94,4.41],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Chad\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Chad","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#ab63fa"},"name":"Chad","offsetgroup":"Chad","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[13.8,12.0,13.1,10.3,13.4,7.29,4.63,3.27,3.27,3.27],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Ghana\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Ghana","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#FFA15A"},"name":"Ghana","offsetgroup":"Ghana","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[9.76,9.04,8.67,11.6,15.3,14.9,15.4,12.2,12.4,12.1],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Eritrea\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Eritrea","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#19d3f3"},"name":"Eritrea","offsetgroup":"Eritrea","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[4.58,3.94,3.98,4.25,2.46,3.56,3.6,3.6,3.6,3.6],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Djibouti\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Djibouti","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#FF6692"},"name":"Djibouti","offsetgroup":"Djibouti","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[11.8,10.8,11.5,9.3,13.7,12.6,14.2,14.2,14.2,14.2],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Guinea\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Guinea","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#B6E880"},"name":"Guinea","offsetgroup":"Guinea","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[6.39,6.05,6.81,5.0,3.54,4.04,2.92,4.41,1.84,1.84],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Mali\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Mali","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#FF97FF"},"name":"Mali","offsetgroup":"Mali","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[11.9,10.1,10.7,13.0,11.4,11.6,11.4,12.2,10.0,10.6],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Angola\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Angola","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#FECB52"},"name":"Angola","offsetgroup":"Angola","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[6.06,3.74,4.83,4.12,4.38,6.06,5.75,6.4,10.1,7.18],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Guinea-Bissau\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Guinea-Bissau","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#636efa"},"name":"Guinea-Bissau","offsetgroup":"Guinea-Bissau","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[2.2,7.67,6.91,3.44,4.04,4.14,4.14,4.14,4.13,4.14],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Benin\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Benin","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#EF553B"},"name":"Benin","offsetgroup":"Benin","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[12.0,9.67,10.7,10.8,11.1,12.1,9.9,9.4,9.2,9.6],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Sao Tome and Principe\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Sao Tome and Principe","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#00cc96"},"name":"Sao Tome and Principe","offsetgroup":"Sao Tome and Principe","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[7.05,9.14,13.3,10.0,13.2,13.2,13.2,13.2,13.2,13.2],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Equatorial Guinea\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Equatorial Guinea","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#ab63fa"},"name":"Equatorial Guinea","offsetgroup":"Equatorial Guinea","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[9.75,26.9,7.47,6.96,6.96,6.96,6.96,6.96,6.96,6.96],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Somalia\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Somalia","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#FFA15A"},"name":"Somalia","offsetgroup":"Somalia","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[4.19,null,null,null,null,null,null,null,null,null],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Mauritius\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Mauritius","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#19d3f3"},"name":"Mauritius","offsetgroup":"Mauritius","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[10.8,9.34,8.82,9.74,9.38,8.82,8.86,7.95,8.32,9.82],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Niger\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Niger","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#FF6692"},"name":"Niger","offsetgroup":"Niger","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[10.1,9.89,9.39,8.97,14.8,16.1,11.5,11.9,11.1,11.1],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Mauritania\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Mauritania","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#B6E880"},"name":"Mauritania","offsetgroup":"Mauritania","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[8.12,10.5,7.2,9.81,9.06,7.78,8.56,7.3,7.3,7.3],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Sudan\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Sudan","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#FF97FF"},"name":"Sudan","offsetgroup":"Sudan","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[8.04,7.69,7.17,7.2,5.74,6.62,7.71,9.85,9.89,9.76],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Gambia\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Gambia","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#FECB52"},"name":"Gambia","offsetgroup":"Gambia","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[7.0,8.66,12.9,11.7,11.3,11.3,11.3,11.3,11.3,11.3],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Senegal\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Senegal","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#636efa"},"name":"Senegal","offsetgroup":"Senegal","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[8.08,9.69,9.68,9.08,12.4,12.1,11.8,11.9,11.6,11.6],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Sierra Leone\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Sierra Leone","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#EF553B"},"name":"Sierra Leone","offsetgroup":"Sierra Leone","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[7.23,7.53,8.44,5.96,7.55,6.77,5.26,6.35,6.35,6.35],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Comoros\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Comoros","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#00cc96"},"name":"Comoros","offsetgroup":"Comoros","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[4.98,6.79,8.28,10.2,11.3,11.9,12.5,11.7,7.32,13.1],"y0":" ","yaxis":"y","type":"box"},{"alignmentgroup":"True","boxpoints":"all","fillcolor":"rgba(255,255,255,0)","hoveron":"points","hovertemplate":"country=Madagascar\u003cbr\u003eyear=%{x}\u003cbr\u003ehealth_budget_prop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"Madagascar","line":{"color":"rgba(255,255,255,0)"},"marker":{"color":"#ab63fa"},"name":"Madagascar","offsetgroup":"Madagascar","orientation":"v","pointpos":0,"showlegend":true,"x":[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010],"x0":" ","xaxis":"x","y":[15.0,13.2,11.9,11.6,11.6,12.4,14.7,14.6,14.7,14.7],"y0":" ","yaxis":"y","type":"box"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"year"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"health_budget_prop"}},"legend":{"title":{"text":"country"},"tracegroupgap":0},"boxmode":"group"},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('ca582cd0-f0b4-441b-be3a-2985c4d2133c');
+var gd = document.getElementById('7845c47c-a9a9-4698-9f68-e9eea1e2672c');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -2450,6 +3020,46 @@ if (outputEl) {{
 </div>
 </div>
 </section>
+<section id="treemap---budget-proportion" class="level4">
+<h4 class="anchored" data-anchor-id="treemap---budget-proportion">Treemap - Budget Proportion</h4>
+<div id="5436c111" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To add a year filter for this graph.</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>px.treemap(</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    sub_sahara_combined, </span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    path <span class="op">=</span> [<span class="st">"country"</span>],</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    values <span class="op">=</span> <span class="st">"health_budget_prop"</span>,</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    color <span class="op">=</span> <span class="st">"health_budget_prop"</span>,</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>    color_continuous_scale <span class="op">=</span> px.colors.sequential.RdBu</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>                            <div id="d33b665e-4594-4171-ae34-b6ffa20457b9" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("d33b665e-4594-4171-ae34-b6ffa20457b9")) {                    Plotly.newPlot(                        "d33b665e-4594-4171-ae34-b6ffa20457b9",                        [{"branchvalues":"total","customdata":[[6.388730808597747],[10.543016176892888],[15.697264729405493],[14.67117383072716],[9.733114825265899],[7.418390177353341],[10.037083036169129],[10.652907624807307],[10.514278576526971],[5.105364344180475],[5.446726933830381],[12.866640316205531],[13.071570443774238],[3.7925235404896425],[10.496471266576975],[5.706777217015141],[11.04419396631501],[12.597660871714591],[4.958207282913165],[5.009733036707452],[7.67192610062893],[9.779939251838433],[13.404736344289432],[13.580059523809522],[16.460686211752655],[11.362178919397694],[8.441047871699023],[9.250618399564509],[14.32796005706134],[11.699140893470794],[11.902351763169355],[6.624147642059658],[18.582906876046422],[12.263645631476956],[10.983705179282868],[6.891864581796724],[null],[11.141187050359711],[8.200513367641522],[12.280595904722107],[11.661181446111868],[10.771993974769348],[14.451927119831813],[null]],"domain":{"x":[0.0,1.0],"y":[0.0,1.0]},"hovertemplate":"labels=%{label}\u003cbr\u003ehealth_budget_prop_sum=%{value}\u003cbr\u003eparent=%{parent}\u003cbr\u003eid=%{id}\u003cbr\u003ehealth_budget_prop=%{color}\u003cextra\u003e\u003c\u002fextra\u003e","ids":["Angola","Benin","Botswana","Burkina Faso","Burundi","Cameroon","Central African Republic","Chad","Comoros","Congo, Rep.","Cote d'Ivoire","Djibouti","Equatorial Guinea","Eritrea","Eswatini","Gabon","Gambia","Ghana","Guinea","Guinea-Bissau","Kenya","Lesotho","Liberia","Madagascar","Malawi","Mali","Mauritania","Mauritius","Mozambique","Namibia","Niger","Nigeria","Rwanda","Sao Tome and Principe","Senegal","Sierra Leone","Somalia","South Africa","Sudan","Tanzania","Togo","Uganda","Zambia","Zimbabwe"],"labels":["Angola","Benin","Botswana","Burkina Faso","Burundi","Cameroon","Central African Republic","Chad","Comoros","Congo, Rep.","Cote d'Ivoire","Djibouti","Equatorial Guinea","Eritrea","Eswatini","Gabon","Gambia","Ghana","Guinea","Guinea-Bissau","Kenya","Lesotho","Liberia","Madagascar","Malawi","Mali","Mauritania","Mauritius","Mozambique","Namibia","Niger","Nigeria","Rwanda","Sao Tome and Principe","Senegal","Sierra Leone","Somalia","South Africa","Sudan","Tanzania","Togo","Uganda","Zambia","Zimbabwe"],"marker":{"coloraxis":"coloraxis","colors":[6.388730808597747,10.543016176892888,15.697264729405493,14.67117383072716,9.733114825265899,7.418390177353341,10.037083036169129,10.652907624807307,10.514278576526971,5.105364344180475,5.446726933830381,12.866640316205531,13.071570443774238,3.7925235404896425,10.496471266576975,5.706777217015141,11.04419396631501,12.597660871714591,4.958207282913165,5.009733036707452,7.67192610062893,9.779939251838433,13.404736344289432,13.580059523809522,16.460686211752655,11.362178919397694,8.441047871699023,9.250618399564509,14.32796005706134,11.699140893470794,11.902351763169355,6.624147642059658,18.582906876046422,12.263645631476956,10.983705179282868,6.891864581796724,null,11.141187050359711,8.200513367641522,12.280595904722107,11.661181446111868,10.771993974769348,14.451927119831813,null]},"name":"","parents":["","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""],"values":[58.62,104.47,150.04,142.61,92.14,73.3,98.14999999999999,84.33,98.07,50.09,53.65,126.5,92.84,37.17,104.06,55.48,108.06,121.37,42.839999999999996,44.949999999999996,76.32,93.83,126.87,134.4,156.22,112.9,82.93,91.85,140.2,116.4,114.85000000000001,60.01,173.21,118.69,107.93,67.78999999999999,4.19,111.2,79.67,119.65,109.95,106.22,142.7,9.26],"type":"treemap"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"coloraxis":{"colorbar":{"title":{"text":"health_budget_prop"}},"colorscale":[[0.0,"rgb(103,0,31)"],[0.1,"rgb(178,24,43)"],[0.2,"rgb(214,96,77)"],[0.3,"rgb(244,165,130)"],[0.4,"rgb(253,219,199)"],[0.5,"rgb(247,247,247)"],[0.6,"rgb(209,229,240)"],[0.7,"rgb(146,197,222)"],[0.8,"rgb(67,147,195)"],[0.9,"rgb(33,102,172)"],[1.0,"rgb(5,48,97)"]]},"legend":{"tracegroupgap":0}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('d33b665e-4594-4171-ae34-b6ffa20457b9');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div>
+</div>
+</div>
 </section>
 </section>
 </section>

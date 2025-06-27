@@ -16,6 +16,7 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 from itables import show
+
 import country_converter as coco
 ```
 
@@ -275,12 +276,10 @@ health_budget_2010.query ("country.str.contains('Congo')")
 ##### **** This will be a value BOX!!! 
 
 ```{python}
+hiv_total_death_df = sub_sahara_combined.agg(total_deaths=("HIV_deaths", "sum"))
 
-hiv_total_death_df  = sub_sahara_combined.agg(total_deaths = ("HIV_deaths","sum"))
+hiv_total_deaths = hiv_total_death_df["HIV_deaths"].tolist()[0]
 
-hiv_total_death_df["HIV_deaths"] = hiv_total_death_df["HIV_deaths"].apply(lambda x: f"{x:,}") 
-
-hiv_total_deaths = hiv_total_death_df["HIV_deaths"]
 
 hiv_total_deaths
 ```
@@ -295,7 +294,7 @@ sub_sahara_combined.to_csv("output/HIV_Combined.csv")
 ```
 
 ```{python}
-# Calculatin the HIV death rate = (HIV deaths/Total population) * 100 000
+# Calculating the HIV death rate = (HIV deaths/Total population) * 100 000
 
 sub_sahara_combined["HIV_mortality"] = (sub_sahara_combined["HIV_deaths"]/sub_sahara_combined["population"] ) * 100000
 
@@ -305,6 +304,8 @@ sub_sahara_combined = sub_sahara_combined.sort_values(by=['year', 'HIV_mortality
 
 sub_sahara_combined["HIV_mortality"] = sub_sahara_combined["HIV_mortality"].fillna(0)
 
+sub_sahara_combined = sub_sahara_combined.round(1)
+
 sub_sahara_combined
 ```
 
@@ -312,12 +313,13 @@ sub_sahara_combined
 ```{python}
 
 # Total sum of HIV deaths:
+
 hiv_map = px.choropleth(
     sub_sahara_combined,
     locations="country_code",
     scope="africa",
     color="HIV_mortality",
-    color_continuous_scale=px.colors.sequential.YlOrRd,
+    color_continuous_scale=px.colors.sequential.RdBu[::-1],
     hover_name="country",
     animation_frame="year",
     title="HIV Related Mortality per 100,000 people in the Sub-Sahara Region 2001 - 2010",
@@ -328,80 +330,129 @@ hiv_map
 
 
 ```{python}
-
 # Creating a horizontal bar chart for the HIV-Mortality
 
 hiv_mortality_bar = px.bar(
-    sub_sahara_combined.query("HIV_mortality != 0"), # removing the 0 values.
+    sub_sahara_combined,
     x="HIV_mortality",
     y="country",
     # orientation="v",
     animation_frame="year",
-    text_auto = "True",
     range_x=[0, sub_sahara_combined["HIV_mortality"].max() + 100],
 )
 
-sub_sahara_combined.query("year == 2010")
+hiv_mortality_bar.update_layout(height = 1000)
 
-
+hiv_mortality_bar 
 ```
 
 
 ## 2. Budget Proportions: 
 
-#### Text-box 
-
-```{python}
-# Highest Value 
-
-max_budget_prop = sub_sahara_combined["health_budget_prop"].max()
-
-max_budget_prop
-
-# Lowest proportion 
-
-min_budget_prop = sub_sahara_combined["health_budget_prop"].min()
-
-min_budget_prop
-
-
-# Average proportion 
-avg_budget_df = sub_sahara_combined.agg(average = ("health_budget_prop","mean")).round(2)
-
-avg_budget_prop =  avg_budget_df["health_budget_prop"].tolist()[0]
-
-avg_budget_prop
-
-```
-
 #### Box plot 
 
 ```{python}
-
 hiv_death_box = px.strip(
     sub_sahara_combined, 
     x = "year", 
     y = "health_budget_prop",
+    #stripmode = "overlay",
     color = "country"
 )
 
-hiv_death_box
+hiv_death_box.update_layout(width = 1010)
+
+
+import plotly.express as px
+
+fig = px.box(
+    sub_sahara_combined,
+    x='year',
+    y='health_budget_prop',
+    points='all',  # Show all points (like a jittered strip plot)
+    color='year',
+    title='Distribution of Health Budget Proportion Over Time',
+    labels={'health_budget_prop': 'Health Budget (% of Gov Budget)',
+    'country':'country'}
+)
+
+fig.update_layout(showlegend=False)
+fig.show()
+
+
+
+
+
+```
+
+#### Data viz for the proportion of the health budget. 
+
+
+```{python}
+
+
+# To add the year filter for this page. 
+px.treemap(
+    sub_sahara_combined,
+    path=["country"],
+    values="health_budget_prop",
+    # animation_frame="year",
+    color="health_budget_prop",
+    color_continuous_scale=px.colors.sequential.RdBu,
+)
+
+# ?px.treemap
+# ?px.choropleth
+```
+
+## 3. HIV Mortality Vs Proportion of Budget. 
+
+#### 1. Scatter plot 
+
+```{python}
+
+# scatter plot doe thw health_budget proportion and HIV mortality 
+scatter_plot = px.scatter(
+    sub_sahara_combined,
+    x="health_budget_prop",
+    y="HIV_mortality",
+    color="country",
+    size="population",
+    trendline='ols',
+    animation_frame="year",
+)
+
+scatter_plot.update_layout(width = 900, height = 700)
+```
+
+#### 2. Choropleth Map 
+
+
+```{python}
+
+sub_sahara_combined_na = sub_sahara_combined.dropna(
+    subset=["health_budget_prop", "HIV_mortality"]
+)
+
+
+px.density_heatmap(
+    sub_sahara_combined_na,
+    x="health_budget_prop",
+    y="HIV_mortality",
+    #z="health_budget_prop",
+   # histfunc="avg",
+    text_auto=True,
+    #animation_frame="year",
+    nbinsx=15,  # reduce bins
+    nbinsy=15,
+)
 
 ```
 
 
-
-#### Treemap - Budget Proportion 
-
-
 ```{python}
-# To add a year filter for this graph.
+sub_sahara_combined.groupby("year")["HIV_mortality"].count().reset_index(name = 'count')
 
-px.treemap(
-    sub_sahara_combined, 
-    path = ["country"],
-    values = "health_budget_prop",
-    color = "health_budget_prop",
-    color_continuous_scale = px.colors.sequential.RdBu
-)
+
+sub_sahara_combined.to_csv("output/HIV_Combined_editted.csv")
 ```
