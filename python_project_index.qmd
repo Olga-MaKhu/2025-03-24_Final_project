@@ -1,14 +1,12 @@
 ---
 title: "HIV Deaths and Health Burget allocation in Sub-Sahara Region Countries 2001 - 2010"
 author: Olga Mushakarara
-format: html
-execute: 
-  enabled: true
+format: dashboard
 ---
 
 
 
-# Packages 
+Packages 
 
 
 ```{python}
@@ -20,7 +18,7 @@ from itables import show
 import country_converter as coco
 ```
 
-# Data Wrangling: HIV Death data 
+Data Wrangling: HIV Death data 
 
 
 ```{python}
@@ -78,7 +76,7 @@ hiv_deaths_2010
 
 ```
 
-# Data Wrangling: HIV population data 
+Data Wrangling: HIV population data 
 ```{python}
 # Reading the population data
 popn = pd.read_csv("data/pop.csv")
@@ -137,7 +135,7 @@ popn_2010["year"] = popn_2010["year"].astype(int)
 popn_2010
 ```
 
-# Data Wrangling: expenditure data: 
+Data Wrangling: expenditure data: 
 
 
 ```{python}
@@ -200,7 +198,7 @@ hiv_popn_budget
 
 ```
 
-# Merging combined datasets with the sub_saharian dataset. 
+Merging combined datasets with the sub_saharian dataset. 
 
 ```{python}
 
@@ -242,7 +240,7 @@ sub_sahara_combined = pd.merge(
 sub_sahara_combined
 ```
 
-# Checking the combined dataset: 
+Checking the combined dataset: 
 
 
 ```{python}
@@ -264,21 +262,21 @@ popn_2010.query ("country.str.contains('Congo')")
 health_budget_2010.query ("country.str.contains('Congo')")
 ```
 
-# Data Analysis: 
+Data Analysis: 
 
-## 1. HIV Deaths: 
-
-
-### Total Deaths: 
+ 1. HIV Deaths: 
 
 
+ Total Deaths: 
 
-##### **** This will be a value BOX!!! 
+
+
+This will be a value BOX!!! 
 
 ```{python}
 hiv_total_death_df = sub_sahara_combined.agg(total_deaths=("HIV_deaths", "sum"))
 
-hiv_total_deaths = hiv_total_death_df["HIV_deaths"].tolist()[0]
+hiv_total_deaths = f"{hiv_total_death_df["HIV_deaths"].tolist()[0]:,}"
 
 
 hiv_total_deaths
@@ -309,7 +307,32 @@ sub_sahara_combined = sub_sahara_combined.round(1)
 sub_sahara_combined
 ```
 
+```{python}
+# Getting the country with the maximum  HIV_mortality rates 
 
+max_row = sub_sahara_combined.loc[sub_sahara_combined["HIV_mortality"].idxmax()]
+country_with_max_mortality = max_row["country"]
+max_mortality_value = f"{max_row["HIV_mortality"]:,}"
+max_year = max_row["year"]
+
+
+
+```
+
+
+```{python}
+# Getting the country with the minimum HIV_mortality rates 
+ # 1. Get the missing values out 
+sub_sahara_combined_na = sub_sahara_combined.dropna(
+    subset=["HIV_deaths","health_budget_prop", "HIV_mortality"]
+)
+
+
+min_row = sub_sahara_combined_na.loc[sub_sahara_combined_na["HIV_mortality"].idxmin()]
+country_with_min_mortality = min_row["country"]
+min_mortality_value = f"{min_row["HIV_mortality"]:,}"
+min_year = min_row["year"]
+```
 ```{python}
 
 # Total sum of HIV deaths:
@@ -347,9 +370,9 @@ hiv_mortality_bar
 ```
 
 
-## 2. Budget Proportions: 
+2. Budget Proportions: 
 
-#### Box plot 
+ Box plot 
 
 ```{python}
 hiv_death_box = px.strip(
@@ -385,7 +408,7 @@ fig.show()
 
 ```
 
-#### Data viz for the proportion of the health budget. 
+Data viz for the proportion of the health budget. 
 
 
 ```{python}
@@ -405,9 +428,9 @@ px.treemap(
 # ?px.choropleth
 ```
 
-## 3. HIV Mortality Vs Proportion of Budget. 
+HIV Mortality Vs Proportion of Budget. 
 
-#### 1. Scatter plot 
+ Scatter plot 
 
 ```{python}
 
@@ -425,14 +448,11 @@ scatter_plot = px.scatter(
 scatter_plot.update_layout(width = 900, height = 700)
 ```
 
-#### 2. Choropleth Map 
+Choropleth Map 
 
 
 ```{python}
 
-sub_sahara_combined_na = sub_sahara_combined.dropna(
-    subset=["health_budget_prop", "HIV_mortality"]
-)
 
 
 px.density_heatmap(
@@ -456,3 +476,9 @@ sub_sahara_combined.groupby("year")["HIV_mortality"].count().reset_index(name = 
 
 sub_sahara_combined.to_csv("output/HIV_Combined_editted.csv")
 ```
+
+# Sub-Saharan Countries HIV Mortality Rates 
+
+# Sub-Saharan Countries Health Budget Allocation 
+
+# Sub-Saharan Countries HIV Mortality Rates Health Budget Allocation Analysis
