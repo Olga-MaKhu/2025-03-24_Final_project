@@ -1,9 +1,7 @@
 ---
 title: "HIV Deaths and Health Burget allocation in Sub-Sahara Region Countries 2001 - 2010"
 author: Olga Mushakarara
-format:
-    dashboard:
-        theme: sandstone
+format: dashboard
 ---
 
 
