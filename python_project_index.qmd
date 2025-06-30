@@ -290,7 +290,6 @@ hiv_map = px.choropleth(
     title="HIV Related Mortality per 100,000 people in the Sub-Sahara Region 2001 - 2010",
 )
 
-hiv_map = hiv_map.update_layout(height = 500)
 
 
 
