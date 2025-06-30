@@ -1,0 +1,396 @@
+country,year,HIV_mortality,health_budget_prop
+Zimbabwe,2001,1250.0,9.3
+Botswana,2001,877.2,9.7
+Lesotho,2001,700.0,9.0
+Zambia,2001,660.2,10.5
+Eswatini,2001,638.1,10.2
+Malawi,2001,543.1,8.7
+Namibia,2001,462.4,10.3
+South Africa,2001,441.2,11.2
+Uganda,2001,404.9,9.7
+Central African Republic,2001,382.7,11.5
+Kenya,2001,379.7,8.4
+Tanzania,2001,369.3,11.2
+Cote d'Ivoire,2001,280.2,5.6
+Rwanda,2001,253.3,9.8
+Mozambique,2001,232.4,14.8
+Burundi,2001,211.2,8.3
+Cameroon,2001,202.6,6.8
+"Congo, Rep.",2001,177.4,4.2
+Gabon,2001,152.7,4.0
+Liberia,2001,129.1,11.5
+Burkina Faso,2001,122.0,9.8
+Togo,2001,121.2,8.5
+Nigeria,2001,115.4,3.2
+Chad,2001,101.1,13.8
+Ghana,2001,79.2,9.8
+Eritrea,2001,77.9,4.6
+Djibouti,2001,77.8,11.8
+Guinea,2001,73.8,6.4
+Mali,2001,60.5,11.9
+Angola,2001,59.9,6.1
+Guinea-Bissau,2001,47.6,2.2
+Benin,2001,41.6,12.0
+Sao Tome and Principe,2001,41.1,7.0
+Equatorial Guinea,2001,40.0,9.8
+Somalia,2001,30.4,4.2
+Mauritius,2001,28.5,10.8
+Niger,2001,26.9,10.1
+Mauritania,2001,22.4,8.1
+Sudan,2001,21.1,8.0
+Gambia,2001,20.0,7.0
+Senegal,2001,13.7,8.1
+Sierra Leone,2001,12.8,7.2
+Comoros,2001,11.0,5.0
+Madagascar,2001,7.6,15.0
+Botswana,2002,919.5,10.6
+Lesotho,2002,804.0,7.2
+Eswatini,2002,726.4,9.9
+Zambia,2002,650.9,13.6
+Malawi,2002,563.0,13.0
+South Africa,2002,541.7,11.5
+Namibia,2002,529.1,11.1
+Kenya,2002,398.8,8.0
+Uganda,2002,380.4,9.7
+Central African Republic,2002,374.1,10.2
+Tanzania,2002,360.1,10.9
+Cote d'Ivoire,2002,278.1,5.2
+Mozambique,2002,263.2,15.5
+Rwanda,2002,250.0,9.1
+Burundi,2002,219.9,8.2
+Cameroon,2002,210.2,7.9
+"Congo, Rep.",2002,173.1,3.6
+Gabon,2002,170.4,4.5
+Liberia,2002,132.7,7.2
+Togo,2002,131.2,6.9
+Nigeria,2002,127.8,3.1
+Burkina Faso,2002,110.2,11.9
+Chad,2002,109.6,12.0
+Ghana,2002,87.0,9.0
+Eritrea,2002,83.7,3.9
+Djibouti,2002,75.4,10.8
+Guinea,2002,75.0,6.0
+Angola,2002,63.6,3.7
+Mali,2002,60.2,10.1
+Guinea-Bissau,2002,46.5,7.7
+Benin,2002,43.0,9.7
+Sao Tome and Principe,2002,40.0,9.1
+Equatorial Guinea,2002,37.6,26.9
+Mauritius,2002,28.5,9.3
+Niger,2002,27.6,9.9
+Sierra Leone,2002,22.1,7.5
+Mauritania,2002,21.9,10.5
+Sudan,2002,21.6,7.7
+Gambia,2002,19.5,8.7
+Senegal,2002,14.3,9.7
+Comoros,2002,10.7,6.8
+Madagascar,2002,8.0,13.2
+Botswana,2003,955.1,10.1
+Lesotho,2003,904.5,8.3
+Eswatini,2003,794.4,12.1
+Zambia,2003,645.5,13.3
+South Africa,2003,618.6,11.2
+Malawi,2003,582.0,16.7
+Namibia,2003,572.9,11.3
+Central African Republic,2003,390.2,12.5
+Kenya,2003,385.8,7.8
+Uganda,2003,352.3,10.0
+Tanzania,2003,350.4,11.3
+Mozambique,2003,299.0,15.0
+Cote d'Ivoire,2003,277.5,4.8
+Rwanda,2003,244.5,17.6
+Cameroon,2003,216.0,8.2
+Burundi,2003,213.1,5.4
+Gabon,2003,181.2,6.5
+"Congo, Rep.",2003,171.0,4.4
+Nigeria,2003,138.7,5.1
+Togo,2003,136.9,9.5
+Liberia,2003,134.6,10.6
+Chad,2003,115.9,13.1
+Burkina Faso,2003,106.9,12.5
+Ghana,2003,89.2,8.7
+Eritrea,2003,84.3,4.0
+Guinea,2003,74.4,6.8
+Djibouti,2003,73.7,11.5
+Angola,2003,67.0,4.8
+Mali,2003,58.3,10.7
+Guinea-Bissau,2003,45.5,6.9
+Benin,2003,44.2,10.7
+Sao Tome and Principe,2003,39.0,13.3
+Equatorial Guinea,2003,35.4,7.5
+Niger,2003,28.9,9.4
+Mauritius,2003,28.2,8.8
+Sierra Leone,2003,27.0,8.4
+Mauritania,2003,21.4,7.2
+Sudan,2003,21.4,7.2
+Gambia,2003,19.0,12.9
+Senegal,2003,15.0,9.7
+Comoros,2003,10.5,8.3
+Madagascar,2003,7.7,11.9
+Lesotho,2004,964.5,8.4
+Eswatini,2004,869.2,8.8
+Botswana,2004,828.7,17.3
+South Africa,2004,693.9,10.3
+Zambia,2004,619.5,14.2
+Namibia,2004,618.6,10.7
+Malawi,2004,592.0,21.0
+Central African Republic,2004,381.9,11.0
+Kenya,2004,374.6,7.7
+Tanzania,2004,341.2,8.5
+Mozambique,2004,328.3,13.8
+Uganda,2004,327.2,9.4
+Cote d'Ivoire,2004,270.4,5.3
+Rwanda,2004,238.1,14.6
+Cameroon,2004,216.9,7.1
+Burundi,2004,205.2,9.2
+Gabon,2004,176.1,6.6
+"Congo, Rep.",2004,165.3,5.1
+Nigeria,2004,148.9,7.8
+Togo,2004,140.4,10.1
+Liberia,2004,136.1,11.9
+Chad,2004,121.0,10.3
+Burkina Faso,2004,96.3,15.3
+Ghana,2004,91.3,11.6
+Eritrea,2004,84.6,4.2
+Guinea-Bissau,2004,81.5,3.4
+Guinea,2004,74.0,5.0
+Djibouti,2004,72.6,9.3
+Angola,2004,64.5,4.1
+Mali,2004,54.2,13.0
+Benin,2004,44.1,10.8
+Sao Tome and Principe,2004,38.0,10.0
+Equatorial Guinea,2004,33.3,7.0
+Sierra Leone,2004,31.7,6.0
+Niger,2004,30.1,9.0
+Mauritius,2004,28.0,9.7
+Sudan,2004,20.9,7.2
+Mauritania,2004,20.9,9.8
+Gambia,2004,18.5,11.7
+Senegal,2004,15.5,9.1
+Comoros,2004,10.3,10.2
+Madagascar,2004,8.1,11.6
+Lesotho,2005,974.4,6.8
+Eswatini,2005,916.7,10.0
+South Africa,2005,747.5,10.4
+Namibia,2005,659.9,12.5
+Botswana,2005,652.2,16.9
+Malawi,2005,601.6,20.0
+Zambia,2005,555.6,14.7
+Mozambique,2005,349.8,18.2
+Central African Republic,2005,349.7,7.8
+Kenya,2005,335.2,8.1
+Tanzania,2005,331.6,9.3
+Uganda,2005,292.9,11.2
+Cote d'Ivoire,2005,248.8,4.5
+Cameroon,2005,222.2,7.7
+Rwanda,2005,221.0,15.6
+Burundi,2005,197.6,11.6
+Gabon,2005,157.5,4.7
+"Congo, Rep.",2005,154.1,6.2
+Nigeria,2005,144.8,6.4
+Togo,2005,135.3,9.8
+Liberia,2005,130.3,11.1
+Chad,2005,126.2,13.4
+Ghana,2005,89.3,15.3
+Guinea-Bissau,2005,87.0,4.0
+Burkina Faso,2005,86.3,18.7
+Eritrea,2005,82.7,2.5
+Djibouti,2005,71.5,13.7
+Guinea,2005,69.2,3.5
+Angola,2005,67.4,4.4
+Equatorial Guinea,2005,63.4,7.0
+Mauritius,2005,47.6,9.4
+Mali,2005,45.2,11.4
+Benin,2005,43.9,11.1
+Sao Tome and Principe,2005,37.0,13.2
+Sierra Leone,2005,36.4,7.6
+Mauritania,2005,34.0,9.1
+Niger,2005,30.4,14.8
+Sudan,2005,20.1,5.7
+Gambia,2005,18.0,11.3
+Senegal,2005,16.1,12.4
+Comoros,2005,10.1,11.3
+Madagascar,2005,7.8,11.6
+Lesotho,2006,923.1,8.2
+Eswatini,2006,907.4,12.2
+South Africa,2006,780.0,10.7
+Namibia,2006,603.0,11.1
+Malawi,2006,568.2,20.0
+Botswana,2006,534.8,16.4
+Zambia,2006,495.9,16.4
+Mozambique,2006,355.8,15.2
+Central African Republic,2006,342.5,9.4
+Tanzania,2006,322.6,14.4
+Kenya,2006,298.1,7.8
+Uganda,2006,256.9,10.2
+Cote d'Ivoire,2006,229.3,4.9
+Cameroon,2006,221.6,7.4
+Burundi,2006,190.6,13.2
+Rwanda,2006,172.0,22.4
+Gabon,2006,152.3,5.0
+Nigeria,2006,147.7,7.1
+Togo,2006,133.1,10.2
+"Congo, Rep.",2006,132.8,5.4
+Chad,2006,121.5,7.3
+Liberia,2006,120.3,15.2
+Guinea-Bissau,2006,91.5,4.1
+Ghana,2006,87.0,14.9
+Eritrea,2006,74.1,3.6
+Djibouti,2006,70.1,12.6
+Burkina Faso,2006,69.4,16.2
+Angola,2006,65.0,6.1
+Guinea,2006,62.5,4.0
+Equatorial Guinea,2006,60.6,7.0
+Mauritius,2006,47.6,8.8
+Benin,2006,40.3,12.1
+Sierra Leone,2006,39.1,6.8
+Mali,2006,37.1,11.6
+Mauritania,2006,36.5,7.8
+Sao Tome and Principe,2006,36.1,13.2
+Niger,2006,30.1,16.1
+Sudan,2006,19.4,6.6
+Gambia,2006,17.4,11.3
+Senegal,2006,13.9,12.1
+Comoros,2006,9.9,11.9
+Madagascar,2006,8.1,12.4
+Eswatini,2007,844.0,10.4
+Lesotho,2007,820.5,11.0
+South Africa,2007,772.3,11.1
+Malawi,2007,500.0,14.2
+Namibia,2007,495.0,13.1
+Botswana,2007,481.7,18.4
+Zambia,2007,388.9,13.4
+Mozambique,2007,347.4,12.8
+Central African Republic,2007,313.9,10.4
+Tanzania,2007,289.9,13.7
+Kenya,2007,260.5,7.7
+Uganda,2007,249.2,9.8
+Cote d'Ivoire,2007,214.3,6.6
+Cameroon,2007,211.1,6.8
+Burundi,2007,183.8,11.8
+Gabon,2007,160.3,5.6
+Nigeria,2007,143.8,9.2
+Togo,2007,135.7,10.6
+Rwanda,2007,125.7,22.0
+"Congo, Rep.",2007,120.6,5.3
+Chad,2007,117.1,4.6
+Liberia,2007,109.0,17.3
+Guinea-Bissau,2007,89.7,4.1
+Ghana,2007,84.7,15.4
+Djibouti,2007,68.6,14.2
+Eritrea,2007,65.7,3.6
+Burkina Faso,2007,62.8,14.8
+Angola,2007,62.5,5.8
+Equatorial Guinea,2007,57.7,7.0
+Guinea,2007,53.8,2.9
+Mauritius,2007,47.2,8.9
+Sierra Leone,2007,43.5,5.3
+Benin,2007,35.8,9.9
+Mauritania,2007,35.6,8.6
+Sao Tome and Principe,2007,35.3,13.2
+Gambia,2007,33.9,11.3
+Mali,2007,32.4,11.4
+Niger,2007,29.1,11.5
+Sudan,2007,18.3,7.7
+Senegal,2007,14.4,11.8
+Comoros,2007,9.7,12.5
+Madagascar,2007,7.9,14.7
+Eswatini,2008,781.8,10.3
+South Africa,2008,743.6,11.5
+Lesotho,2008,710.7,11.1
+Malawi,2008,442.9,14.2
+Botswana,2008,405.1,16.6
+Namibia,2008,400.0,12.1
+Mozambique,2008,334.9,10.5
+Zambia,2008,323.1,15.3
+Central African Republic,2008,263.2,8.4
+Uganda,2008,242.6,10.6
+Tanzania,2008,234.7,13.7
+Kenya,2008,232.1,6.3
+Cameroon,2008,198.9,5.6
+Cote d'Ivoire,2008,190.7,6.5
+Burundi,2008,176.3,8.2
+Gabon,2008,155.3,5.1
+Nigeria,2008,139.2,7.8
+Togo,2008,130.3,13.5
+"Congo, Rep.",2008,121.7,5.3
+Chad,2008,113.0,3.3
+Djibouti,2008,112.0,14.2
+Liberia,2008,102.1,17.2
+Rwanda,2008,98.0,21.9
+Guinea-Bissau,2008,80.5,4.1
+Ghana,2008,78.5,12.2
+Eritrea,2008,60.3,3.6
+Angola,2008,55.6,6.4
+Equatorial Guinea,2008,55.6,7.0
+Burkina Faso,2008,54.2,16.3
+Guinea,2008,50.5,4.4
+Mauritius,2008,47.2,8.0
+Sierra Leone,2008,45.8,6.4
+Mauritania,2008,34.6,7.3
+Sao Tome and Principe,2008,34.5,13.2
+Benin,2008,33.6,9.4
+Gambia,2008,33.0,11.3
+Mali,2008,31.5,12.2
+Niger,2008,28.6,11.9
+Sudan,2008,17.0,9.8
+Senegal,2008,15.0,11.9
+Comoros,2008,9.5,11.7
+Madagascar,2008,8.1,14.6
+Eswatini,2009,729.7,10.1
+Lesotho,2009,707.1,10.3
+South Africa,2009,657.6,11.4
+Malawi,2009,381.9,14.2
+Zambia,2009,333.3,15.7
+Mozambique,2009,330.4,12.2
+Namibia,2009,317.3,12.1
+Botswana,2009,291.5,17.0
+Central African Republic,2009,242.8,8.4
+Tanzania,2009,220.2,12.9
+Uganda,2009,219.0,13.6
+Kenya,2009,198.0,7.3
+Cameroon,2009,193.7,7.3
+Burundi,2009,167.6,8.1
+Cote d'Ivoire,2009,163.6,5.1
+Gabon,2009,144.6,6.6
+Nigeria,2009,129.6,5.9
+"Congo, Rep.",2009,119.2,5.3
+Togo,2009,117.6,15.4
+Djibouti,2009,109.6,14.2
+Chad,2009,92.4,3.3
+Liberia,2009,91.4,13.8
+Rwanda,2009,84.2,20.1
+Guinea-Bissau,2009,78.4,4.1
+Ghana,2009,72.3,12.4
+Eritrea,2009,58.8,3.6
+Equatorial Guinea,2009,52.6,7.0
+Angola,2009,49.1,10.1
+Mauritius,2009,46.9,8.3
+Guinea,2009,46.5,1.8
+Sierra Leone,2009,46.2,6.4
+Burkina Faso,2009,45.2,13.6
+Mauritania,2009,36.6,7.3
+Sao Tome and Principe,2009,33.7,13.2
+Gambia,2009,32.1,11.3
+Mali,2009,28.6,10.0
+Benin,2009,28.4,9.2
+Niger,2009,28.3,11.1
+Sudan,2009,16.5,9.9
+Senegal,2009,16.3,11.6
+Comoros,2009,9.3,7.3
+Madagascar,2009,7.9,14.7
+Eswatini,2010,702.7,10.1
+South Africa,2010,573.6,11.9
+Malawi,2010,331.1,14.2
+Namibia,2010,270.1,12.1
+Uganda,2010,203.7,12.1
+Tanzania,2010,203.1,13.8
+Nigeria,2010,125.7,4.4
+Rwanda,2010,70.9,20.1
+Mauritius,2010,46.9,9.8
+Sierra Leone,2010,43.4,6.4
+Mauritania,2010,38.3,7.3
+Sao Tome and Principe,2010,33.0,13.2
+Niger,2010,24.2,11.1
+Sudan,2010,15.8,9.8
+Senegal,2010,14.3,11.6
